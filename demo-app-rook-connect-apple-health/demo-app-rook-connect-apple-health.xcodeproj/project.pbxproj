@@ -1,0 +1,893 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD13EE5D2A93E0A60027A4E6 /* demo_app_rook_connect_apple_healthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE5C2A93E0A60027A4E6 /* demo_app_rook_connect_apple_healthApp.swift */; };
+		AD13EE612A93E0A70027A4E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD13EE602A93E0A70027A4E6 /* Assets.xcassets */; };
+		AD13EE642A93E0A70027A4E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD13EE632A93E0A70027A4E6 /* Preview Assets.xcassets */; };
+		AD13EEB92A93E5830027A4E6 /* UserVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE6F2A93E5830027A4E6 /* UserVIewModel.swift */; };
+		AD13EEBA2A93E5830027A4E6 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE712A93E5830027A4E6 /* UserView.swift */; };
+		AD13EEBB2A93E5830027A4E6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE732A93E5830027A4E6 /* HomeView.swift */; };
+		AD13EEBC2A93E5830027A4E6 /* DatasourceWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE772A93E5830027A4E6 /* DatasourceWebViewModel.swift */; };
+		AD13EEBD2A93E5830027A4E6 /* DataSourceWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE7A2A93E5830027A4E6 /* DataSourceWebView.swift */; };
+		AD13EEBE2A93E5830027A4E6 /* DataSourcePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE7B2A93E5830027A4E6 /* DataSourcePageView.swift */; };
+		AD13EEBF2A93E5830027A4E6 /* DataSourceNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE7F2A93E5830027A4E6 /* DataSourceNetworking.swift */; };
+		AD13EEC02A93E5830027A4E6 /* DataSourceResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE812A93E5830027A4E6 /* DataSourceResponseDTO.swift */; };
+		AD13EEC12A93E5830027A4E6 /* SourceItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE842A93E5830027A4E6 /* SourceItemViewModel.swift */; };
+		AD13EEC22A93E5830027A4E6 /* DataSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE852A93E5830027A4E6 /* DataSourceViewModel.swift */; };
+		AD13EEC32A93E5830027A4E6 /* ButtonSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE882A93E5830027A4E6 /* ButtonSourceView.swift */; };
+		AD13EEC42A93E5830027A4E6 /* DataSourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE892A93E5830027A4E6 /* DataSourcesView.swift */; };
+		AD13EEC52A93E5830027A4E6 /* PhysicalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE8D2A93E5830027A4E6 /* PhysicalViewModel.swift */; };
+		AD13EEC62A93E5830027A4E6 /* PhysicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE8F2A93E5830027A4E6 /* PhysicalView.swift */; };
+		AD13EEC72A93E5830027A4E6 /* EventOxygenationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE912A93E5830027A4E6 /* EventOxygenationView.swift */; };
+		AD13EEC82A93E5830027A4E6 /* EventOxygenationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE922A93E5830027A4E6 /* EventOxygenationViewModel.swift */; };
+		AD13EEC92A93E5830027A4E6 /* ActivityEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE942A93E5830027A4E6 /* ActivityEventView.swift */; };
+		AD13EECA2A93E5830027A4E6 /* ActivityeventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE952A93E5830027A4E6 /* ActivityeventViewModel.swift */; };
+		AD13EECB2A93E5830027A4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE972A93E5830027A4E6 /* AppDelegate.swift */; };
+		AD13EECC2A93E5830027A4E6 /* SleepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE9B2A93E5830027A4E6 /* SleepViewModel.swift */; };
+		AD13EECD2A93E5830027A4E6 /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE9D2A93E5830027A4E6 /* SleepView.swift */; };
+		AD13EECE2A93E5830027A4E6 /* EventHrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EE9F2A93E5830027A4E6 /* EventHrViewModel.swift */; };
+		AD13EECF2A93E5830027A4E6 /* EventHrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEA02A93E5830027A4E6 /* EventHrView.swift */; };
+		AD13EED02A93E5830027A4E6 /* BodyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEA42A93E5830027A4E6 /* BodyViewModel.swift */; };
+		AD13EED12A93E5830027A4E6 /* BodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEA62A93E5830027A4E6 /* BodyView.swift */; };
+		AD13EED22A93E5830027A4E6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEA92A93E5830027A4E6 /* Response.swift */; };
+		AD13EED32A93E5830027A4E6 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEAB2A93E5830027A4E6 /* ParameterEncoding.swift */; };
+		AD13EED42A93E5830027A4E6 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEAC2A93E5830027A4E6 /* URLParameterEncoder.swift */; };
+		AD13EED52A93E5830027A4E6 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEAD2A93E5830027A4E6 /* JSONParameterEncoder.swift */; };
+		AD13EED62A93E5830027A4E6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEAF2A93E5830027A4E6 /* NetworkManager.swift */; };
+		AD13EED72A93E5830027A4E6 /* DataSourceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB22A93E5830027A4E6 /* DataSourceEndPoint.swift */; };
+		AD13EED82A93E5830027A4E6 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB42A93E5830027A4E6 /* NetworkRouter.swift */; };
+		AD13EED92A93E5830027A4E6 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB52A93E5830027A4E6 /* HTTPTask.swift */; };
+		AD13EEDA2A93E5830027A4E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB62A93E5830027A4E6 /* HTTPMethod.swift */; };
+		AD13EEDB2A93E5830027A4E6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB72A93E5830027A4E6 /* Router.swift */; };
+		AD13EEDC2A93E5830027A4E6 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB82A93E5830027A4E6 /* EndPointType.swift */; };
+		AD13EEF12A9583FE0027A4E6 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEF02A9583FE0027A4E6 /* PushNotificationManager.swift */; };
+		AD932F1A2A958B3400D4C665 /* RemoteSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */; };
+		ADFAB1522AB0D33F00B8F5F5 /* RookSDK in Frameworks */ = {isa = PBXBuildFile; productRef = ADFAB1512AB0D33F00B8F5F5 /* RookSDK */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AD13EE592A93E0A60027A4E6 /* demo-app-rook-connect-apple-health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo-app-rook-connect-apple-health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD13EE5C2A93E0A60027A4E6 /* demo_app_rook_connect_apple_healthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_app_rook_connect_apple_healthApp.swift; sourceTree = "<group>"; };
+		AD13EE602A93E0A70027A4E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD13EE632A93E0A70027A4E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AD13EE6A2A93E4CA0027A4E6 /* demo-app-rook-connect-apple-health.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "demo-app-rook-connect-apple-health.entitlements"; sourceTree = "<group>"; };
+		AD13EE6F2A93E5830027A4E6 /* UserVIewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVIewModel.swift; sourceTree = "<group>"; };
+		AD13EE712A93E5830027A4E6 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		AD13EE732A93E5830027A4E6 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AD13EE772A93E5830027A4E6 /* DatasourceWebViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatasourceWebViewModel.swift; sourceTree = "<group>"; };
+		AD13EE7A2A93E5830027A4E6 /* DataSourceWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceWebView.swift; sourceTree = "<group>"; };
+		AD13EE7B2A93E5830027A4E6 /* DataSourcePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourcePageView.swift; sourceTree = "<group>"; };
+		AD13EE7F2A93E5830027A4E6 /* DataSourceNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceNetworking.swift; sourceTree = "<group>"; };
+		AD13EE812A93E5830027A4E6 /* DataSourceResponseDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceResponseDTO.swift; sourceTree = "<group>"; };
+		AD13EE842A93E5830027A4E6 /* SourceItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceItemViewModel.swift; sourceTree = "<group>"; };
+		AD13EE852A93E5830027A4E6 /* DataSourceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceViewModel.swift; sourceTree = "<group>"; };
+		AD13EE882A93E5830027A4E6 /* ButtonSourceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSourceView.swift; sourceTree = "<group>"; };
+		AD13EE892A93E5830027A4E6 /* DataSourcesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourcesView.swift; sourceTree = "<group>"; };
+		AD13EE8D2A93E5830027A4E6 /* PhysicalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalViewModel.swift; sourceTree = "<group>"; };
+		AD13EE8F2A93E5830027A4E6 /* PhysicalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalView.swift; sourceTree = "<group>"; };
+		AD13EE912A93E5830027A4E6 /* EventOxygenationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventOxygenationView.swift; sourceTree = "<group>"; };
+		AD13EE922A93E5830027A4E6 /* EventOxygenationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventOxygenationViewModel.swift; sourceTree = "<group>"; };
+		AD13EE942A93E5830027A4E6 /* ActivityEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityEventView.swift; sourceTree = "<group>"; };
+		AD13EE952A93E5830027A4E6 /* ActivityeventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityeventViewModel.swift; sourceTree = "<group>"; };
+		AD13EE972A93E5830027A4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD13EE9B2A93E5830027A4E6 /* SleepViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepViewModel.swift; sourceTree = "<group>"; };
+		AD13EE9D2A93E5830027A4E6 /* SleepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepView.swift; sourceTree = "<group>"; };
+		AD13EE9F2A93E5830027A4E6 /* EventHrViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHrViewModel.swift; sourceTree = "<group>"; };
+		AD13EEA02A93E5830027A4E6 /* EventHrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHrView.swift; sourceTree = "<group>"; };
+		AD13EEA42A93E5830027A4E6 /* BodyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyViewModel.swift; sourceTree = "<group>"; };
+		AD13EEA62A93E5830027A4E6 /* BodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyView.swift; sourceTree = "<group>"; };
+		AD13EEA92A93E5830027A4E6 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		AD13EEAB2A93E5830027A4E6 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		AD13EEAC2A93E5830027A4E6 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		AD13EEAD2A93E5830027A4E6 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		AD13EEAF2A93E5830027A4E6 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AD13EEB22A93E5830027A4E6 /* DataSourceEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceEndPoint.swift; sourceTree = "<group>"; };
+		AD13EEB42A93E5830027A4E6 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		AD13EEB52A93E5830027A4E6 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		AD13EEB62A93E5830027A4E6 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		AD13EEB72A93E5830027A4E6 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		AD13EEB82A93E5830027A4E6 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		AD13EEEB2A9574AA0027A4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AD13EEF02A9583FE0027A4E6 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSyncManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD13EE562A93E0A60027A4E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADFAB1522AB0D33F00B8F5F5 /* RookSDK in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD13EE502A93E0A60027A4E6 = {
+			isa = PBXGroup;
+			children = (
+				AD13EE5B2A93E0A60027A4E6 /* demo-app-rook-connect-apple-health */,
+				AD13EE5A2A93E0A60027A4E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD13EE5A2A93E0A60027A4E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE592A93E0A60027A4E6 /* demo-app-rook-connect-apple-health.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD13EE5B2A93E0A60027A4E6 /* demo-app-rook-connect-apple-health */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEEB2A9574AA0027A4E6 /* Info.plist */,
+				AD13EE6B2A93E5400027A4E6 /* Source */,
+				AD13EE6A2A93E4CA0027A4E6 /* demo-app-rook-connect-apple-health.entitlements */,
+				AD13EE5C2A93E0A60027A4E6 /* demo_app_rook_connect_apple_healthApp.swift */,
+				AD13EE602A93E0A70027A4E6 /* Assets.xcassets */,
+				AD13EE622A93E0A70027A4E6 /* Preview Content */,
+			);
+			path = "demo-app-rook-connect-apple-health";
+			sourceTree = "<group>";
+		};
+		AD13EE622A93E0A70027A4E6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE632A93E0A70027A4E6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD13EE6B2A93E5400027A4E6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEEF2A9583FE0027A4E6 /* PsuhNotifications */,
+				AD13EEE82A951B320027A4E6 /* Helpers */,
+				AD13EE932A93E5830027A4E6 /* ActivityEvent */,
+				AD13EE962A93E5830027A4E6 /* AppDelegate */,
+				AD13EEA12A93E5830027A4E6 /* Body */,
+				AD13EE7C2A93E5830027A4E6 /* DataSource */,
+				AD13EE722A93E5830027A4E6 /* Home */,
+				AD13EE9E2A93E5830027A4E6 /* HrEvent */,
+				AD13EEA72A93E5830027A4E6 /* networking */,
+				AD13EE902A93E5830027A4E6 /* OxygenationEvent */,
+				AD13EE8A2A93E5830027A4E6 /* Physical */,
+				AD13EE982A93E5830027A4E6 /* Sleep */,
+				AD13EE6C2A93E5830027A4E6 /* User */,
+				AD13EE742A93E5830027A4E6 /* WebView */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		AD13EE6C2A93E5830027A4E6 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE6D2A93E5830027A4E6 /* Presentation */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		AD13EE6D2A93E5830027A4E6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE6E2A93E5830027A4E6 /* ViewModel */,
+				AD13EE702A93E5830027A4E6 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AD13EE6E2A93E5830027A4E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE6F2A93E5830027A4E6 /* UserVIewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD13EE702A93E5830027A4E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE712A93E5830027A4E6 /* UserView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AD13EE722A93E5830027A4E6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE732A93E5830027A4E6 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AD13EE742A93E5830027A4E6 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE752A93E5830027A4E6 /* Presentation */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		AD13EE752A93E5830027A4E6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE762A93E5830027A4E6 /* ViewModel */,
+				AD13EE782A93E5830027A4E6 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AD13EE762A93E5830027A4E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE772A93E5830027A4E6 /* DatasourceWebViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD13EE782A93E5830027A4E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE792A93E5830027A4E6 /* Components */,
+				AD13EE7B2A93E5830027A4E6 /* DataSourcePageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AD13EE792A93E5830027A4E6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE7A2A93E5830027A4E6 /* DataSourceWebView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AD13EE7C2A93E5830027A4E6 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE7D2A93E5830027A4E6 /* Data */,
+				AD13EE822A93E5830027A4E6 /* Presentation */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		AD13EE7D2A93E5830027A4E6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE7E2A93E5830027A4E6 /* DataNetworking */,
+				AD13EE802A93E5830027A4E6 /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AD13EE7E2A93E5830027A4E6 /* DataNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE7F2A93E5830027A4E6 /* DataSourceNetworking.swift */,
+			);
+			path = DataNetworking;
+			sourceTree = "<group>";
+		};
+		AD13EE802A93E5830027A4E6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE812A93E5830027A4E6 /* DataSourceResponseDTO.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		AD13EE822A93E5830027A4E6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE832A93E5830027A4E6 /* ViewModel */,
+				AD13EE862A93E5830027A4E6 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AD13EE832A93E5830027A4E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE842A93E5830027A4E6 /* SourceItemViewModel.swift */,
+				AD13EE852A93E5830027A4E6 /* DataSourceViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD13EE862A93E5830027A4E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE872A93E5830027A4E6 /* ViewComponent */,
+				AD13EE892A93E5830027A4E6 /* DataSourcesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AD13EE872A93E5830027A4E6 /* ViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE882A93E5830027A4E6 /* ButtonSourceView.swift */,
+			);
+			path = ViewComponent;
+			sourceTree = "<group>";
+		};
+		AD13EE8A2A93E5830027A4E6 /* Physical */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE8B2A93E5830027A4E6 /* Presentation */,
+			);
+			path = Physical;
+			sourceTree = "<group>";
+		};
+		AD13EE8B2A93E5830027A4E6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE8C2A93E5830027A4E6 /* ViewModel */,
+				AD13EE8E2A93E5830027A4E6 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AD13EE8C2A93E5830027A4E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE8D2A93E5830027A4E6 /* PhysicalViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD13EE8E2A93E5830027A4E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE8F2A93E5830027A4E6 /* PhysicalView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AD13EE902A93E5830027A4E6 /* OxygenationEvent */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE912A93E5830027A4E6 /* EventOxygenationView.swift */,
+				AD13EE922A93E5830027A4E6 /* EventOxygenationViewModel.swift */,
+			);
+			path = OxygenationEvent;
+			sourceTree = "<group>";
+		};
+		AD13EE932A93E5830027A4E6 /* ActivityEvent */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE942A93E5830027A4E6 /* ActivityEventView.swift */,
+				AD13EE952A93E5830027A4E6 /* ActivityeventViewModel.swift */,
+			);
+			path = ActivityEvent;
+			sourceTree = "<group>";
+		};
+		AD13EE962A93E5830027A4E6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE972A93E5830027A4E6 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		AD13EE982A93E5830027A4E6 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE992A93E5830027A4E6 /* Presentation */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		AD13EE992A93E5830027A4E6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE9A2A93E5830027A4E6 /* ViewModel */,
+				AD13EE9C2A93E5830027A4E6 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AD13EE9A2A93E5830027A4E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE9B2A93E5830027A4E6 /* SleepViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD13EE9C2A93E5830027A4E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE9D2A93E5830027A4E6 /* SleepView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AD13EE9E2A93E5830027A4E6 /* HrEvent */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EE9F2A93E5830027A4E6 /* EventHrViewModel.swift */,
+				AD13EEA02A93E5830027A4E6 /* EventHrView.swift */,
+			);
+			path = HrEvent;
+			sourceTree = "<group>";
+		};
+		AD13EEA12A93E5830027A4E6 /* Body */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEA22A93E5830027A4E6 /* Presentation */,
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
+		AD13EEA22A93E5830027A4E6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEA32A93E5830027A4E6 /* ViewModel */,
+				AD13EEA52A93E5830027A4E6 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AD13EEA32A93E5830027A4E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEA42A93E5830027A4E6 /* BodyViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD13EEA52A93E5830027A4E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEA62A93E5830027A4E6 /* BodyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AD13EEA72A93E5830027A4E6 /* networking */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEA82A93E5830027A4E6 /* OutPut */,
+				AD13EEAA2A93E5830027A4E6 /* Encoding */,
+				AD13EEAE2A93E5830027A4E6 /* Manager */,
+				AD13EEB02A93E5830027A4E6 /* EndPoint */,
+				AD13EEB32A93E5830027A4E6 /* Service */,
+			);
+			path = networking;
+			sourceTree = "<group>";
+		};
+		AD13EEA82A93E5830027A4E6 /* OutPut */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEA92A93E5830027A4E6 /* Response.swift */,
+			);
+			path = OutPut;
+			sourceTree = "<group>";
+		};
+		AD13EEAA2A93E5830027A4E6 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEAB2A93E5830027A4E6 /* ParameterEncoding.swift */,
+				AD13EEAC2A93E5830027A4E6 /* URLParameterEncoder.swift */,
+				AD13EEAD2A93E5830027A4E6 /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		AD13EEAE2A93E5830027A4E6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEAF2A93E5830027A4E6 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		AD13EEB02A93E5830027A4E6 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEB12A93E5830027A4E6 /* DataSource */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		AD13EEB12A93E5830027A4E6 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEB22A93E5830027A4E6 /* DataSourceEndPoint.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		AD13EEB32A93E5830027A4E6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEB42A93E5830027A4E6 /* NetworkRouter.swift */,
+				AD13EEB52A93E5830027A4E6 /* HTTPTask.swift */,
+				AD13EEB62A93E5830027A4E6 /* HTTPMethod.swift */,
+				AD13EEB72A93E5830027A4E6 /* Router.swift */,
+				AD13EEB82A93E5830027A4E6 /* EndPointType.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AD13EEE82A951B320027A4E6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AD13EEEF2A9583FE0027A4E6 /* PsuhNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				AD13EEF02A9583FE0027A4E6 /* PushNotificationManager.swift */,
+				AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */,
+			);
+			path = PsuhNotifications;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD13EE582A93E0A60027A4E6 /* demo-app-rook-connect-apple-health */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD13EE672A93E0A70027A4E6 /* Build configuration list for PBXNativeTarget "demo-app-rook-connect-apple-health" */;
+			buildPhases = (
+				AD13EE552A93E0A60027A4E6 /* Sources */,
+				AD13EE562A93E0A60027A4E6 /* Frameworks */,
+				AD13EE572A93E0A60027A4E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "demo-app-rook-connect-apple-health";
+			packageProductDependencies = (
+				ADFAB1512AB0D33F00B8F5F5 /* RookSDK */,
+			);
+			productName = "demo-app-rook-connect-apple-health";
+			productReference = AD13EE592A93E0A60027A4E6 /* demo-app-rook-connect-apple-health.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD13EE512A93E0A60027A4E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					AD13EE582A93E0A60027A4E6 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = AD13EE542A93E0A60027A4E6 /* Build configuration list for PBXProject "demo-app-rook-connect-apple-health" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD13EE502A93E0A60027A4E6;
+			packageReferences = (
+				ADFAB1502AB0D33F00B8F5F5 /* XCRemoteSwiftPackageReference "rook-ios-sdk" */,
+			);
+			productRefGroup = AD13EE5A2A93E0A60027A4E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD13EE582A93E0A60027A4E6 /* demo-app-rook-connect-apple-health */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD13EE572A93E0A60027A4E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD13EE642A93E0A70027A4E6 /* Preview Assets.xcassets in Resources */,
+				AD13EE612A93E0A70027A4E6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD13EE552A93E0A60027A4E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD13EEB92A93E5830027A4E6 /* UserVIewModel.swift in Sources */,
+				AD13EEC42A93E5830027A4E6 /* DataSourcesView.swift in Sources */,
+				AD13EED02A93E5830027A4E6 /* BodyViewModel.swift in Sources */,
+				AD13EECA2A93E5830027A4E6 /* ActivityeventViewModel.swift in Sources */,
+				AD13EEBF2A93E5830027A4E6 /* DataSourceNetworking.swift in Sources */,
+				AD13EEC72A93E5830027A4E6 /* EventOxygenationView.swift in Sources */,
+				AD13EEC82A93E5830027A4E6 /* EventOxygenationViewModel.swift in Sources */,
+				AD13EEDB2A93E5830027A4E6 /* Router.swift in Sources */,
+				AD13EED42A93E5830027A4E6 /* URLParameterEncoder.swift in Sources */,
+				AD13EEC02A93E5830027A4E6 /* DataSourceResponseDTO.swift in Sources */,
+				AD13EEC62A93E5830027A4E6 /* PhysicalView.swift in Sources */,
+				AD13EED72A93E5830027A4E6 /* DataSourceEndPoint.swift in Sources */,
+				AD13EE5D2A93E0A60027A4E6 /* demo_app_rook_connect_apple_healthApp.swift in Sources */,
+				AD13EED12A93E5830027A4E6 /* BodyView.swift in Sources */,
+				AD13EEC32A93E5830027A4E6 /* ButtonSourceView.swift in Sources */,
+				AD13EEBB2A93E5830027A4E6 /* HomeView.swift in Sources */,
+				AD13EECC2A93E5830027A4E6 /* SleepViewModel.swift in Sources */,
+				AD13EEBC2A93E5830027A4E6 /* DatasourceWebViewModel.swift in Sources */,
+				AD13EEBD2A93E5830027A4E6 /* DataSourceWebView.swift in Sources */,
+				AD13EEBE2A93E5830027A4E6 /* DataSourcePageView.swift in Sources */,
+				AD13EECD2A93E5830027A4E6 /* SleepView.swift in Sources */,
+				AD13EEDC2A93E5830027A4E6 /* EndPointType.swift in Sources */,
+				AD13EED92A93E5830027A4E6 /* HTTPTask.swift in Sources */,
+				AD13EED62A93E5830027A4E6 /* NetworkManager.swift in Sources */,
+				AD13EED52A93E5830027A4E6 /* JSONParameterEncoder.swift in Sources */,
+				AD13EED32A93E5830027A4E6 /* ParameterEncoding.swift in Sources */,
+				AD13EECE2A93E5830027A4E6 /* EventHrViewModel.swift in Sources */,
+				AD13EED22A93E5830027A4E6 /* Response.swift in Sources */,
+				AD13EEC52A93E5830027A4E6 /* PhysicalViewModel.swift in Sources */,
+				AD932F1A2A958B3400D4C665 /* RemoteSyncManager.swift in Sources */,
+				AD13EEC92A93E5830027A4E6 /* ActivityEventView.swift in Sources */,
+				AD13EECF2A93E5830027A4E6 /* EventHrView.swift in Sources */,
+				AD13EEC12A93E5830027A4E6 /* SourceItemViewModel.swift in Sources */,
+				AD13EEF12A9583FE0027A4E6 /* PushNotificationManager.swift in Sources */,
+				AD13EECB2A93E5830027A4E6 /* AppDelegate.swift in Sources */,
+				AD13EEDA2A93E5830027A4E6 /* HTTPMethod.swift in Sources */,
+				AD13EED82A93E5830027A4E6 /* NetworkRouter.swift in Sources */,
+				AD13EEBA2A93E5830027A4E6 /* UserView.swift in Sources */,
+				AD13EEC22A93E5830027A4E6 /* DataSourceViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AD13EE652A93E0A70027A4E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD13EE662A93E0A70027A4E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD13EE682A93E0A70027A4E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "demo-app-rook-connect-apple-health/demo-app-rook-connect-apple-health.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"demo-app-rook-connect-apple-health/Preview Content\"";
+				DEVELOPMENT_TEAM = WGGJK9F34K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "demo-app-rook-connect-apple-health/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = RookAppleHealth;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We want to track your health data to improve your daily activities";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We want to track your health data to improve your daily activities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "try.rook.demo-app-rook-connect-apple-health";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD13EE692A93E0A70027A4E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "demo-app-rook-connect-apple-health/demo-app-rook-connect-apple-health.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"demo-app-rook-connect-apple-health/Preview Content\"";
+				DEVELOPMENT_TEAM = WGGJK9F34K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "demo-app-rook-connect-apple-health/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = RookAppleHealth;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We want to track your health data to improve your daily activities";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We want to track your health data to improve your daily activities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "try.rook.demo-app-rook-connect-apple-health";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD13EE542A93E0A60027A4E6 /* Build configuration list for PBXProject "demo-app-rook-connect-apple-health" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD13EE652A93E0A70027A4E6 /* Debug */,
+				AD13EE662A93E0A70027A4E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD13EE672A93E0A70027A4E6 /* Build configuration list for PBXNativeTarget "demo-app-rook-connect-apple-health" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD13EE682A93E0A70027A4E6 /* Debug */,
+				AD13EE692A93E0A70027A4E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ADFAB1502AB0D33F00B8F5F5 /* XCRemoteSwiftPackageReference "rook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RookeriesDevelopment/rook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADFAB1512AB0D33F00B8F5F5 /* RookSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADFAB1502AB0D33F00B8F5F5 /* XCRemoteSwiftPackageReference "rook-ios-sdk" */;
+			productName = RookSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AD13EE512A93E0A60027A4E6 /* Project object */;
+}
