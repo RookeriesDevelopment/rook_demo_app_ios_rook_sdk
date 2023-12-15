@@ -8,16 +8,19 @@
 import Foundation
 import RookUsersSDK
 import Combine
+import RookSDK
 
 class UserViewModel: ObservableObject {
   
   // MARK:  Properties
   
   private let userManager: RookUsersManger = RookUsersManger()
+  private let rookConfiguration: RookConnectConfigurationManager = RookConnectConfigurationManager.shared
   
   @Published var userId: String = ""
   @Published var isUserStored: Bool = false
   @Published var isAddUserEnable: Bool = false
+  @Published var loading: Bool = false
   
   var id: String = ""
   
@@ -29,16 +32,19 @@ class UserViewModel: ObservableObject {
   
   func addUser() {
     if !(userId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) {
-      userManager.registerRookUser(with: userId) { [weak self] result in
-        switch result {
-        case .success(let success):
-          DispatchQueue.main.async {
+      loading = true
+      rookConfiguration.updateUserId(userId) { [weak self] result in
+        DispatchQueue.main.async {
+          switch result {
+          case .success(let success):
+            
             debugPrint("success adding user \(success)")
             self?.id = self?.userId ?? ""
             self?.isUserStored = true
+          case .failure(let failure):
+            debugPrint("error adding user \(failure)")
           }
-        case .failure(let failure):
-          debugPrint("error adding user \(failure)")
+          self?.loading = false
         }
       }
     }
@@ -61,7 +67,7 @@ class UserViewModel: ObservableObject {
     } receiveValue: { [weak self] idUser in
       self?.isAddUserEnable = !(idUser.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
     }.store(in: &cancellables)
-
+    
   }
   
 }

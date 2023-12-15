@@ -27,7 +27,7 @@ class SleepViewModel: ObservableObject {
   // MARK:  Helpers
   
   func getSleepData() {
-    extractioManager.getSleepSummay(date: date) { [weak self] result in
+    extractioManager.getSleepSummary(date: date) { [weak self] result in
       DispatchQueue.main.async {
         switch result {
         case .success(let data):

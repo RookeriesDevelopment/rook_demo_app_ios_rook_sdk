@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RookConnectTransmission
+import RookSDK
 
 struct HomeView: View {
   
@@ -67,6 +68,15 @@ struct HomeView: View {
       }
     }.onAppear() {
       PushNotificationManager.shared.requestRegister()
+      RookConnectConfigurationManager.shared.syncUserTimeZone() { result in
+        switch result {
+        case .success(let success):
+          debugPrint("success while uploading time zone \(success)")
+        case .failure(let failure):
+          debugPrint("error while uploading time zone \(failure)")
+        }
+        
+      }
     }
   }
 }

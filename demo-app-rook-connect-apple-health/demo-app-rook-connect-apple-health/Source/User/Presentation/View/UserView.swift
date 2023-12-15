@@ -22,6 +22,9 @@ struct UserView: View {
         TextField("User id", text: $viewModel.userId)
           .frame(maxWidth: .infinity, minHeight: 40)
           .background(Color.gray)
+          .autocapitalization(.none)
+          .disableAutocorrection(true)
+          .keyboardType(.emailAddress)
           .foregroundColor(.black)
           .font(.system(size: 16, weight: .medium))
           .cornerRadius(8)
@@ -30,7 +33,7 @@ struct UserView: View {
         
         Spacer()
         
-        if viewModel.isAddUserEnable {
+        if viewModel.isAddUserEnable && !viewModel.loading {
           
           Button(action: {
             viewModel.addUser()
