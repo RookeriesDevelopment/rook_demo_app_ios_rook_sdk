@@ -14,8 +14,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     
     RookConnectConfigurationManager.shared.setConfiguration(
-      clientUUID: "9593d0ec-47c1-4477-a8ce-10d3f4f43127",
-      secretKey: "YR9GoQ3mP0zey5nZ9w3WHQMvtvFvMdnefblx")
+      clientUUID: "",
+      secretKey: "") // Set your client uuid and your secrete key here.
     
     RookConnectConfigurationManager.shared.setEnvironment(.sandbox)
     
