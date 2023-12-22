@@ -12,12 +12,32 @@ import RookSDK
 struct HomeView: View {
   
   let user: String
+  @StateObject var viewModel: HomeViewModel = HomeViewModel()
+  @Environment(\.scenePhase) var scenePhase
   
   var body: some View {
     
     VStack {
       Text(user)
         .font(.system(size: 24, weight: .bold))
+        .padding([.top], 12)
+      
+      if viewModel.isLoading {
+        
+        HStack {
+          Spacer()
+          ProgressView()
+            .progressViewStyle(.circular)
+            .padding([.trailing], 12)
+          
+          Text("Synchronizing yesterday Summaries...")
+          Spacer()
+        }
+        .frame(height: 44)
+        .background(Color.gray)
+        .cornerRadius(5)
+        .padding(12)
+      }
       
       Spacer()
       
@@ -75,7 +95,12 @@ struct HomeView: View {
         case .failure(let failure):
           debugPrint("error while uploading time zone \(failure)")
         }
-        
+      }
+      viewModel.syncYesterdaySummaries()
+    }
+    .onChange(of: scenePhase) { newPhase in
+      if newPhase == .active {
+        viewModel.syncYesterdaySummaries()
       }
     }
   }

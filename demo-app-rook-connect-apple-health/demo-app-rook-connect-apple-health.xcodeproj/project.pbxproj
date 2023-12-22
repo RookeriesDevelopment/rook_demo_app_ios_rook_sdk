@@ -47,6 +47,7 @@
 		AD13EEDB2A93E5830027A4E6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB72A93E5830027A4E6 /* Router.swift */; };
 		AD13EEDC2A93E5830027A4E6 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB82A93E5830027A4E6 /* EndPointType.swift */; };
 		AD13EEF12A9583FE0027A4E6 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEF02A9583FE0027A4E6 /* PushNotificationManager.swift */; };
+		AD7BAA1B2B351D0A00456126 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */; };
 		AD932F1A2A958B3400D4C665 /* RemoteSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */; };
 		ADFAB1522AB0D33F00B8F5F5 /* RookSDK in Frameworks */ = {isa = PBXBuildFile; productRef = ADFAB1512AB0D33F00B8F5F5 /* RookSDK */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		AD13EEB82A93E5830027A4E6 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		AD13EEEB2A9574AA0027A4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD13EEF02A9583FE0027A4E6 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSyncManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				AD13EE732A93E5830027A4E6 /* HomeView.swift */,
+				AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				AD13EEB92A93E5830027A4E6 /* UserVIewModel.swift in Sources */,
 				AD13EEC42A93E5830027A4E6 /* DataSourcesView.swift in Sources */,
 				AD13EED02A93E5830027A4E6 /* BodyViewModel.swift in Sources */,
+				AD7BAA1B2B351D0A00456126 /* HomeViewModel.swift in Sources */,
 				AD13EECA2A93E5830027A4E6 /* ActivityeventViewModel.swift in Sources */,
 				AD13EEBF2A93E5830027A4E6 /* DataSourceNetworking.swift in Sources */,
 				AD13EEC72A93E5830027A4E6 /* EventOxygenationView.swift in Sources */,

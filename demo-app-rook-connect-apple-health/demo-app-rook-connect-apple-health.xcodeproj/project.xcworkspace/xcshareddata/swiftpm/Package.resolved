@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RookeriesDevelopment/rook-ios-sdk",
       "state" : {
-        "revision" : "375f6ceb1ce3d7816aa36f3cca56d1de773e4d35",
-        "version" : "1.0.7"
+        "revision" : "45a93bfffa894f100170483cfd189a6ceb151e36",
+        "version" : "1.0.8"
       }
     }
   ],
