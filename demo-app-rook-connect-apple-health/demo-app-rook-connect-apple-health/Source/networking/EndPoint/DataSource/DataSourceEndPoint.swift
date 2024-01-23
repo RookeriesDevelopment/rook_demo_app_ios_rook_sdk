@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import RookSDK
 
 enum DataSourceEndPoint {
   case getDataSources(clientUUID: String, userId: String)
 }
 
 extension DataSourceEndPoint: EndPointType {
+  
   var baseUrl: URL? {
     guard let url: URL = URL(string: "https://api.rook-connect.dev") else {
       return nil
@@ -44,5 +46,9 @@ extension DataSourceEndPoint: EndPointType {
     return nil
   }
   
+  var basicAuth: BasicAuth? {
+    return BasicAuth(userName: ConfigurationManager.shared.clientUUID,
+                     password: ConfigurationManager.shared.secreteKey)
+  }
   
 }

@@ -86,6 +86,8 @@ final class Router<EndPoint: EndPointType>: NetworkRouter {
         self.additionalHeaders(additionalHeaders, request: &request)
         try self.configureParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: &request)
       }
+      self.addBasicAuth(route.basicAuth,
+                        request: &request)
       return request
     } catch {
       throw error
@@ -110,5 +112,21 @@ final class Router<EndPoint: EndPointType>: NetworkRouter {
     for (key, value) in headers {
       request.setValue(value, forHTTPHeaderField: key)
     }
+  }
+
+  private func addBasicAuth(_ auth: BasicAuth?,
+                            request: inout URLRequest) {
+    guard let basicAuth = auth else {
+      return
+    }
+    
+    let authString: String = "\(basicAuth.userName):\(basicAuth.password)"
+    guard let authData: Data = authString.data(using: .utf8) else {
+      return
+    }
+    
+    let data = authData.base64EncodedString()
+    request.addValue("Basic \(data)", forHTTPHeaderField: "Authorization")
+    
   }
 }

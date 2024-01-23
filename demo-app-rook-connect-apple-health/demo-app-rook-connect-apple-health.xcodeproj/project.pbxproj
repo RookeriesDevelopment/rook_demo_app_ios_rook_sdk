@@ -48,6 +48,7 @@
 		AD13EEDC2A93E5830027A4E6 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB82A93E5830027A4E6 /* EndPointType.swift */; };
 		AD13EEF12A9583FE0027A4E6 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEF02A9583FE0027A4E6 /* PushNotificationManager.swift */; };
 		AD7BAA1B2B351D0A00456126 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */; };
+		AD81CD8E2B606A8A00F1E782 /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81CD8D2B606A8A00F1E782 /* BasicAuth.swift */; };
 		AD932F1A2A958B3400D4C665 /* RemoteSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */; };
 		ADFAB1522AB0D33F00B8F5F5 /* RookSDK in Frameworks */ = {isa = PBXBuildFile; productRef = ADFAB1512AB0D33F00B8F5F5 /* RookSDK */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		AD13EEEB2A9574AA0027A4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD13EEF02A9583FE0027A4E6 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AD81CD8D2B606A8A00F1E782 /* BasicAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSyncManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -519,6 +521,7 @@
 				AD13EEB62A93E5830027A4E6 /* HTTPMethod.swift */,
 				AD13EEB72A93E5830027A4E6 /* Router.swift */,
 				AD13EEB82A93E5830027A4E6 /* EndPointType.swift */,
+				AD81CD8D2B606A8A00F1E782 /* BasicAuth.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				AD13EEC02A93E5830027A4E6 /* DataSourceResponseDTO.swift in Sources */,
 				AD13EEC62A93E5830027A4E6 /* PhysicalView.swift in Sources */,
 				AD13EED72A93E5830027A4E6 /* DataSourceEndPoint.swift in Sources */,
+				AD81CD8E2B606A8A00F1E782 /* BasicAuth.swift in Sources */,
 				AD13EE5D2A93E0A60027A4E6 /* demo_app_rook_connect_apple_healthApp.swift in Sources */,
 				AD13EED12A93E5830027A4E6 /* BodyView.swift in Sources */,
 				AD13EEC32A93E5830027A4E6 /* ButtonSourceView.swift in Sources */,

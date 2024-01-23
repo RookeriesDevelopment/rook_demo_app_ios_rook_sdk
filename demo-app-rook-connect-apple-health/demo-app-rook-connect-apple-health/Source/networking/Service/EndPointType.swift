@@ -13,4 +13,5 @@ public protocol EndPointType {
     var httpMethod: HTTPMethod { get }
     var task: HTTPTask { get }
     var headers: HTTPHeaders? { get }
+    var basicAuth: BasicAuth? { get }
 }
