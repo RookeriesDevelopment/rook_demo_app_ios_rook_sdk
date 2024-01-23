@@ -13,9 +13,9 @@ enum DataSourceEndPoint {
 }
 
 extension DataSourceEndPoint: EndPointType {
-  
+  // change this url for review or prod
   var baseUrl: URL? {
-    guard let url: URL = URL(string: "https://api.rook-connect.dev") else {
+    guard let url: URL = URL(string: "https://api.rook-connect.review") else {
       return nil
     }
     return  url
