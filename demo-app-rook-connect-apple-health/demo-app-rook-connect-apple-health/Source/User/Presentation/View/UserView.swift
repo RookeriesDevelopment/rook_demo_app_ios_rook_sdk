@@ -39,18 +39,18 @@ struct UserView: View {
             viewModel.addUser()
           }, label: {
             Text("Add User")
+              .frame(width: 250)
               .font(.system(size: 16, weight: .bold))
               .foregroundColor(.white)
+              .padding(20)
+              .background(Color.red)
+              .cornerRadius(10)
           })
-          .padding(20)
-          .frame(width: 250)
-          .background(Color.red)
-          .cornerRadius(10)
         }
         
         NavigationLink(isActive: $viewModel.isUserStored,
                        destination: {
-          HomeView(user: viewModel.id).navigationBarBackButtonHidden()
+          PermissionView(viewModel: PermissionViewModel()).navigationBarBackButtonHidden()
         }, label: {
           EmptyView()
         })

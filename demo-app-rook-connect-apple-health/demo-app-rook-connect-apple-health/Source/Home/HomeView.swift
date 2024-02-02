@@ -8,6 +8,7 @@
 import SwiftUI
 import RookConnectTransmission
 import RookSDK
+import RookAppleHealth
 
 struct HomeView: View {
   
@@ -21,6 +22,18 @@ struct HomeView: View {
       Text(user)
         .font(.system(size: 24, weight: .bold))
         .padding([.top], 12)
+      
+      Button(action: {
+        viewModel.enableBackGround()
+      }, label: {
+        Text(viewModel.backGroundText)
+          .frame(width: 250, height: 50)
+          .foregroundColor(.white)
+          .font(.system(size: 16, weight: .bold))
+          .background(Color.red)
+          .cornerRadius(12)
+          .padding(21)
+      })
       
       if viewModel.isLoading {
         
@@ -96,7 +109,7 @@ struct HomeView: View {
           debugPrint("error while uploading time zone \(failure)")
         }
       }
-      viewModel.syncYesterdaySummaries()
+      viewModel.onAppear()
     }
     .onChange(of: scenePhase) { newPhase in
       if newPhase == .active {

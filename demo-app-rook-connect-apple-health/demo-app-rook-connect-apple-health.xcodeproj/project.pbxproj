@@ -50,6 +50,8 @@
 		AD7BAA1B2B351D0A00456126 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */; };
 		AD81CD8E2B606A8A00F1E782 /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81CD8D2B606A8A00F1E782 /* BasicAuth.swift */; };
 		AD932F1A2A958B3400D4C665 /* RemoteSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */; };
+		ADF1D0452B6D677A009B31B3 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF1D0442B6D677A009B31B3 /* PermissionView.swift */; };
+		ADF1D0472B6D6791009B31B3 /* PermissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF1D0462B6D6791009B31B3 /* PermissionViewModel.swift */; };
 		ADFAB1522AB0D33F00B8F5F5 /* RookSDK in Frameworks */ = {isa = PBXBuildFile; productRef = ADFAB1512AB0D33F00B8F5F5 /* RookSDK */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +102,8 @@
 		AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AD81CD8D2B606A8A00F1E782 /* BasicAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSyncManager.swift; sourceTree = "<group>"; };
+		ADF1D0442B6D677A009B31B3 /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
+		ADF1D0462B6D6791009B31B3 /* PermissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 		AD13EE6B2A93E5400027A4E6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				ADF1D0432B6D675C009B31B3 /* Permissions */,
 				AD13EEEF2A9583FE0027A4E6 /* PsuhNotifications */,
 				AD13EEE82A951B320027A4E6 /* Helpers */,
 				AD13EE932A93E5830027A4E6 /* ActivityEvent */,
@@ -542,6 +547,15 @@
 			path = PsuhNotifications;
 			sourceTree = "<group>";
 		};
+		ADF1D0432B6D675C009B31B3 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				ADF1D0442B6D677A009B31B3 /* PermissionView.swift */,
+				ADF1D0462B6D6791009B31B3 /* PermissionViewModel.swift */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -633,6 +647,7 @@
 				AD13EED72A93E5830027A4E6 /* DataSourceEndPoint.swift in Sources */,
 				AD81CD8E2B606A8A00F1E782 /* BasicAuth.swift in Sources */,
 				AD13EE5D2A93E0A60027A4E6 /* demo_app_rook_connect_apple_healthApp.swift in Sources */,
+				ADF1D0472B6D6791009B31B3 /* PermissionViewModel.swift in Sources */,
 				AD13EED12A93E5830027A4E6 /* BodyView.swift in Sources */,
 				AD13EEC32A93E5830027A4E6 /* ButtonSourceView.swift in Sources */,
 				AD13EEBB2A93E5830027A4E6 /* HomeView.swift in Sources */,
@@ -651,6 +666,7 @@
 				AD13EEC52A93E5830027A4E6 /* PhysicalViewModel.swift in Sources */,
 				AD932F1A2A958B3400D4C665 /* RemoteSyncManager.swift in Sources */,
 				AD13EEC92A93E5830027A4E6 /* ActivityEventView.swift in Sources */,
+				ADF1D0452B6D677A009B31B3 /* PermissionView.swift in Sources */,
 				AD13EECF2A93E5830027A4E6 /* EventHrView.swift in Sources */,
 				AD13EEC12A93E5830027A4E6 /* SourceItemViewModel.swift in Sources */,
 				AD13EEF12A9583FE0027A4E6 /* PushNotificationManager.swift in Sources */,
@@ -798,14 +814,14 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.03;
+				MARKETING_VERSION = 1.06;
 				PRODUCT_BUNDLE_IDENTIFIER = "try.rook.demo-app-rook-connect-apple-health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -813,7 +829,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -836,14 +852,14 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.03;
+				MARKETING_VERSION = 1.06;
 				PRODUCT_BUNDLE_IDENTIFIER = "try.rook.demo-app-rook-connect-apple-health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -851,7 +867,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
