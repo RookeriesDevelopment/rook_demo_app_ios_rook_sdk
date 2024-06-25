@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RookAppleHealth
 import RookSDK
 
 class SleepViewModel: ObservableObject {
@@ -15,12 +14,12 @@ class SleepViewModel: ObservableObject {
   // MARK:  Properties
   
   private let extractioManager = RookExtractionManager()
-  private let syncManager: RookSummaryManger = RookSummaryManger()
+  private let syncManager: RookSummaryManager = RookSummaryManager()
   
   var message: String = ""
   
   @Published var date: Date = Date()
-  @Published var sleepData: RookSleepData?
+  @Published var sleepData: [RookSleepData]?
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
   

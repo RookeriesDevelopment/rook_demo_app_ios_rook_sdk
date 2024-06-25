@@ -6,27 +6,48 @@
 //
 
 import SwiftUI
-import RookConnectTransmission
 import RookSDK
-import RookAppleHealth
 
 struct HomeView: View {
   
-  let user: String
   @StateObject var viewModel: HomeViewModel = HomeViewModel()
   @Environment(\.scenePhase) var scenePhase
   
   var body: some View {
-    
     VStack {
-      Text(user)
-        .font(.system(size: 24, weight: .bold))
-        .padding([.top], 12)
-      
+
+      HStack {
+        Text(viewModel.user)
+          .font(.system(size: 14, weight: .bold))
+
+        if let steps: Int = viewModel.currentSteps {
+          if viewModel.loadingSteps {
+            ProgressView()
+          } else {
+            Spacer()
+            Image(systemName: "figure.walk")
+            Text("current steps: \(steps)")
+          }
+        }
+      }
+      .padding(8)
+
       Button(action: {
         viewModel.enableBackGround()
       }, label: {
-        Text(viewModel.backGroundText)
+        Text("Enable backGround")
+          .frame(width: 250, height: 50)
+          .foregroundColor(.white)
+          .font(.system(size: 16, weight: .bold))
+          .background(Color.red)
+          .cornerRadius(12)
+          .padding(21)
+      })
+
+      Button(action: {
+        viewModel.disableBackGround()
+      }, label: {
+        Text("Disable backGround")
           .frame(width: 250, height: 50)
           .foregroundColor(.white)
           .font(.system(size: 16, weight: .bold))
@@ -51,17 +72,22 @@ struct HomeView: View {
         .cornerRadius(5)
         .padding(12)
       }
-      
+
+      Button(action: {
+        viewModel.showDataSourceView()
+      }, label: {
+        Text("Data Sources Page")
+          .frame(width: 250, height: 35)
+          .foregroundColor(.white)
+          .font(.system(size: 14, weight: .bold))
+          .background(Color.red)
+          .cornerRadius(12)
+          .padding(21)
+      })
+
       Spacer()
       
       List {
-        
-        NavigationLink(destination: {
-          DataSourcesView()
-        }, label: {
-          Text("Data Sources Page")
-        })
-        
         NavigationLink(destination: {
           SleepView()
         }, label: {
@@ -101,19 +127,12 @@ struct HomeView: View {
       }
     }.onAppear() {
       PushNotificationManager.shared.requestRegister()
-      RookConnectConfigurationManager.shared.syncUserTimeZone() { result in
-        switch result {
-        case .success(let success):
-          debugPrint("success while uploading time zone \(success)")
-        case .failure(let failure):
-          debugPrint("error while uploading time zone \(failure)")
-        }
-      }
       viewModel.onAppear()
     }
     .onChange(of: scenePhase) { newPhase in
       if newPhase == .active {
         viewModel.syncYesterdaySummaries()
+        viewModel.getSteps()
       }
     }
   }

@@ -5,8 +5,7 @@
 //  Created by Francisco Guerrero Escamilla on 16/03/23.
 //
 
-import Foundation
-import RookAppleHealth
+import Foundation 
 import RookSDK
 
 class PhysicalViewModel: ObservableObject {
@@ -15,7 +14,7 @@ class PhysicalViewModel: ObservableObject {
   
   private let extractioManager: RookExtractionManager = RookExtractionManager()
   private let permissionManager: RookPermissionExtraction = RookPermissionExtraction()
-  private let syncManager: RookSummaryManger = RookSummaryManger()
+  private let syncManager: RookSummaryManager = RookSummaryManager()
   
   var message: String = ""
   

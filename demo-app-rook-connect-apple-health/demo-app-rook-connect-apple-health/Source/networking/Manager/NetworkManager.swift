@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import RookAppleHealth
+import RookSDK
 
 public enum NetworkResponse: String {
   case success

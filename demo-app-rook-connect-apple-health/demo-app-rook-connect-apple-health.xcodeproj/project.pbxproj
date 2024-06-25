@@ -47,13 +47,26 @@
 		AD13EEDB2A93E5830027A4E6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB72A93E5830027A4E6 /* Router.swift */; };
 		AD13EEDC2A93E5830027A4E6 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEB82A93E5830027A4E6 /* EndPointType.swift */; };
 		AD13EEF12A9583FE0027A4E6 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13EEF02A9583FE0027A4E6 /* PushNotificationManager.swift */; };
+		AD2456722C12997400F7BEBB /* RookSDK in Frameworks */ = {isa = PBXBuildFile; productRef = AD2456712C12997400F7BEBB /* RookSDK */; };
 		AD7BAA1B2B351D0A00456126 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */; };
 		AD81CD8E2B606A8A00F1E782 /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81CD8D2B606A8A00F1E782 /* BasicAuth.swift */; };
 		AD932F1A2A958B3400D4C665 /* RemoteSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */; };
 		ADF1D0452B6D677A009B31B3 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF1D0442B6D677A009B31B3 /* PermissionView.swift */; };
 		ADF1D0472B6D6791009B31B3 /* PermissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF1D0462B6D6791009B31B3 /* PermissionViewModel.swift */; };
-		ADFAB1522AB0D33F00B8F5F5 /* RookSDK in Frameworks */ = {isa = PBXBuildFile; productRef = ADFAB1512AB0D33F00B8F5F5 /* RookSDK */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD887C282C097345006E804C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD13EE592A93E0A60027A4E6 /* demo-app-rook-connect-apple-health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo-app-rook-connect-apple-health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADFAB1522AB0D33F00B8F5F5 /* RookSDK in Frameworks */,
+				AD2456722C12997400F7BEBB /* RookSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +173,6 @@
 			children = (
 				ADF1D0432B6D675C009B31B3 /* Permissions */,
 				AD13EEEF2A9583FE0027A4E6 /* PsuhNotifications */,
-				AD13EEE82A951B320027A4E6 /* Helpers */,
 				AD13EE932A93E5830027A4E6 /* ActivityEvent */,
 				AD13EE962A93E5830027A4E6 /* AppDelegate */,
 				AD13EEA12A93E5830027A4E6 /* Body */,
@@ -531,13 +543,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		AD13EEE82A951B320027A4E6 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		AD13EEEF2A9583FE0027A4E6 /* PsuhNotifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,6 +571,7 @@
 				AD13EE552A93E0A60027A4E6 /* Sources */,
 				AD13EE562A93E0A60027A4E6 /* Frameworks */,
 				AD13EE572A93E0A60027A4E6 /* Resources */,
+				AD887C282C097345006E804C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -573,7 +579,7 @@
 			);
 			name = "demo-app-rook-connect-apple-health";
 			packageProductDependencies = (
-				ADFAB1512AB0D33F00B8F5F5 /* RookSDK */,
+				AD2456712C12997400F7BEBB /* RookSDK */,
 			);
 			productName = "demo-app-rook-connect-apple-health";
 			productReference = AD13EE592A93E0A60027A4E6 /* demo-app-rook-connect-apple-health.app */;
@@ -604,7 +610,7 @@
 			);
 			mainGroup = AD13EE502A93E0A60027A4E6;
 			packageReferences = (
-				ADFAB1502AB0D33F00B8F5F5 /* XCRemoteSwiftPackageReference "rook-ios-sdk" */,
+				AD2456702C12997400F7BEBB /* XCRemoteSwiftPackageReference "rook-ios-sdk" */,
 			);
 			productRefGroup = AD13EE5A2A93E0A60027A4E6 /* Products */;
 			projectDirPath = "";
@@ -821,7 +827,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.06;
+				MARKETING_VERSION = 1.09;
 				PRODUCT_BUNDLE_IDENTIFIER = "try.rook.demo-app-rook-connect-apple-health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -859,7 +865,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.06;
+				MARKETING_VERSION = 1.09;
 				PRODUCT_BUNDLE_IDENTIFIER = "try.rook.demo-app-rook-connect-apple-health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -895,20 +901,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		ADFAB1502AB0D33F00B8F5F5 /* XCRemoteSwiftPackageReference "rook-ios-sdk" */ = {
+		AD2456702C12997400F7BEBB /* XCRemoteSwiftPackageReference "rook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RookeriesDevelopment/rook-ios-sdk";
+			repositoryURL = "https://github.com/RookeriesDevelopment/rook-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		ADFAB1512AB0D33F00B8F5F5 /* RookSDK */ = {
+		AD2456712C12997400F7BEBB /* RookSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ADFAB1502AB0D33F00B8F5F5 /* XCRemoteSwiftPackageReference "rook-ios-sdk" */;
+			package = AD2456702C12997400F7BEBB /* XCRemoteSwiftPackageReference "rook-ios-sdk" */;
 			productName = RookSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

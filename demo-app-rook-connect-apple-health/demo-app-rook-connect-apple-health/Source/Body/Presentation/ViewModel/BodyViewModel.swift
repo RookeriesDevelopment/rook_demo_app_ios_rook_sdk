@@ -6,14 +6,13 @@
 //
 
 import Foundation
-import RookAppleHealth
 import RookSDK
 
 class BodyViewModel: ObservableObject {
   
   private let extractioManager = RookExtractionManager()
   private let permissionManager = RookPermissionExtraction()
-  private let syncManager: RookSummaryManger = RookSummaryManger()
+  private let syncManager: RookSummaryManager = RookSummaryManager()
   
   var message: String = ""
   

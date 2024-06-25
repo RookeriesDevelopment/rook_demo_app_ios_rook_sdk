@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RookAppleHealth
 import RookSDK
 
 class EventOxygenationViewModel: ObservableObject {

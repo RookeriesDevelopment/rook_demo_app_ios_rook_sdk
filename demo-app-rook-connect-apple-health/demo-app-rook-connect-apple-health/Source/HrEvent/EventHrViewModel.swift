@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RookAppleHealth
 import RookSDK
 
 final class EventHrViewModel: ObservableObject {
@@ -20,7 +19,7 @@ final class EventHrViewModel: ObservableObject {
   var eventTypes = ["Body", "Physical"]
   
   @Published var date: Date = Date()
-  @Published var hrEvents: [RookHeartRateEvent] = []
+  @Published var hrEvents: [RookHeartRateEventExtraction] = []
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
   @Published var selectedType = "Body"

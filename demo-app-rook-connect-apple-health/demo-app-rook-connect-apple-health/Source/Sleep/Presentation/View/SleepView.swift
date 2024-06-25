@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import RookAppleHealth
+import RookSDK
 
 struct SleepView: View {
   
@@ -46,13 +46,13 @@ struct SleepView: View {
         List {
           LazyVStack {
             
-            Text("Sleep duration \(sleepVM.sleepData?.summaries.sleepRelatedData.sleepDurationRelatedData.sleepDurationSeconds ?? 0)")
+            Text("Sleep duration \(sleepVM.sleepData?.first?.summaries.sleepRelatedData.sleepDurationRelatedData.sleepDurationSeconds ?? 0)")
             
-            Text("Sleep deep duration \(sleepVM.sleepData?.summaries.sleepRelatedData.sleepDurationRelatedData.deepSleepDurationSeconds ?? 0)")
+            Text("Sleep deep duration \(sleepVM.sleepData?.first?.summaries.sleepRelatedData.sleepDurationRelatedData.deepSleepDurationSeconds ?? 0)")
             
-            Text("Sleep ligth duration \(sleepVM.sleepData?.summaries.sleepRelatedData.sleepDurationRelatedData.lightSleepDurationSeconds ?? 0)")
+            Text("Sleep ligth duration \(sleepVM.sleepData?.first?.summaries.sleepRelatedData.sleepDurationRelatedData.lightSleepDurationSeconds ?? 0)")
             
-            Text("Sleep rem duration \(sleepVM.sleepData?.summaries.sleepRelatedData.sleepDurationRelatedData.remSleepDurationSeconds ?? 0)")
+            Text("Sleep rem duration \(sleepVM.sleepData?.first?.summaries.sleepRelatedData.sleepDurationRelatedData.remSleepDurationSeconds ?? 0)")
           }
         }
         

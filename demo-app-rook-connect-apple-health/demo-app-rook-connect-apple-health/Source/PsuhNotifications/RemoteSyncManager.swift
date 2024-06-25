@@ -12,7 +12,7 @@ import UIKit
 final class RemoteSyncManger {
   
   static let shared: RemoteSyncManger = RemoteSyncManger()
-  private let summaryManager: RookSummaryManger = RookSummaryManger()
+  private let summaryManager: RookSummaryManager = RookSummaryManager()
   var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier.invalid
   
   func updateSleepSummary(from date: String, completion: @escaping (Result<Bool, Error>) -> Void) {

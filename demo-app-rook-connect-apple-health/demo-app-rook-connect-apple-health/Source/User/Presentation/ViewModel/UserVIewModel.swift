@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RookUsersSDK
 import Combine
 import RookSDK
 
@@ -14,7 +13,6 @@ class UserViewModel: ObservableObject {
   
   // MARK:  Properties
   
-  private let userManager: RookUsersManger = RookUsersManger()
   private let rookConfiguration: RookConnectConfigurationManager = RookConnectConfigurationManager.shared
   
   @Published var userId: String = ""
@@ -51,7 +49,7 @@ class UserViewModel: ObservableObject {
   }
   
   func validateUserStored() {
-    userManager.getUserIdStored() { [weak self] result in
+    rookConfiguration.getUserId() { [weak self] result in
       switch result {
       case .success(let id):
         self?.id = id

@@ -7,7 +7,6 @@
 
 import Foundation
 import RookSDK
-import RookAppleHealth
 
 class ActivityEventViewModel: ObservableObject {
   
@@ -17,7 +16,7 @@ class ActivityEventViewModel: ObservableObject {
   var message: String = ""
   
   @Published var date: Date = Date()
-  @Published var activityEvents: [RookActivityEvent] = []
+  @Published var activityEvents: [RookActivityEventExtraction] = []
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
   

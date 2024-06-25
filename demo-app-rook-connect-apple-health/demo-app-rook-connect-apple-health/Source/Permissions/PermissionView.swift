@@ -31,7 +31,7 @@ struct PermissionView: View {
         
         NavigationLink(isActive: $viewModel.isActive,
                        destination: {
-          HomeView(user: viewModel.user)
+          HomeView()
             .navigationBarBackButtonHidden()
         }, label: {
           EmptyView()

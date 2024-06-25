@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Charts
-import RookAppleHealth
+import RookSDK
 
 struct EventHrView: View {
   
@@ -73,7 +73,7 @@ struct EventHrView: View {
 
 struct EventList: View {
   
-  var events: [RookHeartRateEvent] = []
+  var events: [RookHeartRateEventExtraction] = []
   
   var body: some View {
     ScrollView(.horizontal) {

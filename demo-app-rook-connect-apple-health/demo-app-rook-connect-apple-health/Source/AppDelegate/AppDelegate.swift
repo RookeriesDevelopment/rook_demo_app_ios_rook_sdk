@@ -30,6 +30,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     RookConnectConfigurationManager.shared.setEnvironment(.sandbox)
     
     RookConnectConfigurationManager.shared.initRook()
+    RookConnectConfigurationManager.shared.setConsoleLogAvailable(true)
     
     UNUserNotificationCenter.current().delegate = self
     PushNotificationManager.shared.listenerRequestNotification()
