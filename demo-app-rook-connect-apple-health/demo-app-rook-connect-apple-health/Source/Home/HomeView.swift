@@ -16,74 +16,9 @@ struct HomeView: View {
   var body: some View {
     VStack {
 
-      HStack {
-        Text(viewModel.user)
-          .font(.system(size: 14, weight: .bold))
-
-        if let steps: Int = viewModel.currentSteps {
-          if viewModel.loadingSteps {
-            ProgressView()
-          } else {
-            Spacer()
-            Image(systemName: "figure.walk")
-            Text("current steps: \(steps)")
-          }
-        }
-      }
-      .padding(8)
-
-      Button(action: {
-        viewModel.enableBackGround()
-      }, label: {
-        Text("Enable backGround")
-          .frame(width: 250, height: 50)
-          .foregroundColor(.white)
-          .font(.system(size: 16, weight: .bold))
-          .background(Color.red)
-          .cornerRadius(12)
-          .padding(21)
-      })
-
-      Button(action: {
-        viewModel.disableBackGround()
-      }, label: {
-        Text("Disable backGround")
-          .frame(width: 250, height: 50)
-          .foregroundColor(.white)
-          .font(.system(size: 16, weight: .bold))
-          .background(Color.red)
-          .cornerRadius(12)
-          .padding(21)
-      })
+      userStepsView
       
-      if viewModel.isLoading {
-        
-        HStack {
-          Spacer()
-          ProgressView()
-            .progressViewStyle(.circular)
-            .padding([.trailing], 12)
-          
-          Text("Synchronizing yesterday Summaries...")
-          Spacer()
-        }
-        .frame(height: 44)
-        .background(Color.gray)
-        .cornerRadius(5)
-        .padding(12)
-      }
-
-      Button(action: {
-        viewModel.showDataSourceView()
-      }, label: {
-        Text("Data Sources Page")
-          .frame(width: 250, height: 35)
-          .foregroundColor(.white)
-          .font(.system(size: 14, weight: .bold))
-          .background(Color.red)
-          .cornerRadius(12)
-          .padding(21)
-      })
+      statusBackgroundView
 
       Spacer()
       
@@ -125,6 +60,19 @@ struct HomeView: View {
         })
         
       }
+      
+      Button(action: {
+        viewModel.showDataSourceView()
+      }, label: {
+        Text("Data Sources Page")
+          .frame(width: 250, height: 35)
+          .foregroundColor(.white)
+          .font(.system(size: 14, weight: .bold))
+          .background(Color.red)
+          .cornerRadius(12)
+          .padding(21)
+      })
+      
     }.onAppear() {
       PushNotificationManager.shared.requestRegister()
       viewModel.onAppear()
@@ -134,6 +82,99 @@ struct HomeView: View {
         viewModel.syncYesterdaySummaries()
         viewModel.getSteps()
       }
+    }
+  }
+
+  private var userStepsView: some View {
+    VStack {
+      HStack {
+        Text("user id \(viewModel.user)")
+        if let steps: Int = viewModel.currentSteps {
+          if viewModel.loadingSteps {
+            ProgressView()
+          } else {
+            Spacer()
+            Image(systemName: "figure.walk")
+            Text("steps: \(steps)")
+          }
+        }
+      }
+      .padding(8)
+      .onReceive(NotificationCenter.default.publisher(
+        for: UIScene.willEnterForegroundNotification)) { _ in
+          viewModel.getSteps()
+          viewModel.getBackgroundStatusSummaries()
+          viewModel.getBackgroundStatusEvents()
+        }
+
+      if viewModel.isLoading {
+        HStack {
+          Spacer()
+          ProgressView()
+            .progressViewStyle(.circular)
+            .padding([.trailing], 12)
+          Text("Synchronizing Summaries...")
+          Spacer()
+        }
+        .frame(height: 44)
+        .background(Color.gray)
+        .cornerRadius(5)
+        .padding(12)
+      }
+    }
+  }
+
+  private var statusBackgroundView: some View {
+    VStack {
+      HStack {
+        Text("Background summaries")
+          .padding(.horizontal, 8)
+        
+        if viewModel.loadingSummariesBackgroundStatus {
+          ProgressView()
+        } else {
+          Button(action: {
+            viewModel.toggleSummariesBackgroundStatus()
+          }, label: {
+            VStack {
+              Text(viewModel.summariesStatusText)
+                .padding(18)
+                .foregroundColor(.white)
+            }
+            .frame(height: 24)
+            .background(Color(viewModel.summariesStatusColor, bundle: nil))
+            .cornerRadius(6)
+          })
+        }
+
+        Spacer()
+      }
+      .padding(.vertical, 12)
+      
+      HStack {
+        Text("Background events")
+          .padding(.horizontal, 8)
+        
+        if viewModel.loadingEventsBackgroundStatus {
+          ProgressView()
+        } else {
+          Button(action: {
+            viewModel.toggleEventsBackgroundStatus()
+          }) {
+            VStack {
+              Text(viewModel.eventsStatusText)
+                .padding(18)
+                .foregroundColor(.white)
+            }
+            .frame(height: 24)
+            .background(Color(viewModel.eventsStatusColor, bundle: nil))
+            .cornerRadius(6)
+          }
+        }
+
+        Spacer()
+      }
+      .padding(.vertical, 12)
     }
   }
 }

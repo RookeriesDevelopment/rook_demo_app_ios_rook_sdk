@@ -51,10 +51,6 @@ struct EventHrView: View {
               .cornerRadius(12)
               .padding(21)
           })
-          
-          EventList(events: viewModel.hrEvents)
-            .frame(height: 230)
-          
           Spacer()
         }
         .padding(12)
@@ -68,46 +64,5 @@ struct EventHrView: View {
         }
       }
     }
-  }
-}
-
-struct EventList: View {
-  
-  var events: [RookHeartRateEventExtraction] = []
-  
-  var body: some View {
-    ScrollView(.horizontal) {
-      HStack {
-        ForEach(events, id: \.metadata.datetime) { event in
-          VStack {
-            Text("Hr max \(event.heartRateData.hrMaxBPM ?? 0)")
-            
-            Text("Hr avg \(event.heartRateData.hrAvgBPM ?? 0)")
-            
-            Text("Hr min \(event.heartRateData.hrMinimumBPM ?? 0)")
-            
-            Text("hrv min \(event.heartRateData.hrvAvgSdnnNumber ?? 0)")
-            
-            if #available(iOS 16.0, *) {
-              Chart(event.heartRateData.hrGranularDataBPM ?? [], id: \.datetime) { granular in
-                RectangleMark(
-                  x: .value("time",
-                            "\(granular.datetime)"),
-                  y: .value("BPM",
-                            granular.bpm)
-                )
-              }
-            }
-          }
-          .frame(width: 350)
-        }
-      }
-    }
-  }
-}
-
-struct EventHrView_Previews: PreviewProvider {
-  static var previews: some View {
-    EventHrView()
   }
 }

@@ -38,6 +38,8 @@ struct PermissionView: View {
         })
         
       }
+    }.onAppear() {
+      viewModel.requestAllPermission()
     }
   }
 }

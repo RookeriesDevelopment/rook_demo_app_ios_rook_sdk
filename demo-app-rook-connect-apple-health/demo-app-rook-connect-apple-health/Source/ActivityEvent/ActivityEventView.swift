@@ -45,44 +45,9 @@ struct ActivityEventView: View {
               .padding(21)
           })
           
-          ActivityEventList(events: viewModel.activityEvents)
-            .frame(height: 230)
-          
         }
         .padding(12)
         .onAppear {
-          viewModel.getLastExtractionDateTime()
-        }
-      }
-    }
-  }
-}
-
-struct ActivityEventList: View {
-  
-  var events: [RookActivityEventExtraction] = []
-  
-  var body: some View {
-    ScrollView(.horizontal) {
-      HStack {
-        ForEach(events, id: \.metadata.datetime) { event in
-          VStack {
-            
-            Text("duration \(event.activityData?.activityDurationSeconds ?? 0)")
-            Text("type name \(event.activityData?.activityTypeName ?? "S/N")")
-            
-            if #available(iOS 16.0, *) {
-              Chart(event.heartRateData?.hrGranularDataBPM ?? [], id: \.datetime) { granular in
-                RectangleMark(
-                  x: .value("time",
-                            "\(granular.datetime)"),
-                  y: .value("BPM",
-                            granular.bpm)
-                )
-              }
-            }
-          }
-          .frame(width: 350)
         }
       }
     }

@@ -12,7 +12,6 @@ final class EventHrViewModel: ObservableObject {
   
   // MARK:  Properties
   
-  private let eventManager: RookExtractionEventManager = RookExtractionEventManager()
   private let syncEventsManager: RookEventsManager = RookEventsManager()
   
   var message: String = ""
@@ -27,42 +26,10 @@ final class EventHrViewModel: ObservableObject {
   // MARK:  Helpers
   
   func getAndSyncHrEvents() {
-    if selectedType == "Body" {
-      getHrBodyEvents()
-    } else {
-      getHrPhysicalEvents()
-    }
     syncEvents()
   }
-  
-  private func getHrBodyEvents() {
-    eventManager.getBodyHeartRateEvents(date: date) { [weak self] result in
-      DispatchQueue.main.async {
-      switch result {
-        case .success(let events):
-          self?.hrEvents = events
-        case .failure(let failure):
-          self?.hrEvents = []
-          debugPrint("Error fetching event \(failure)")
-        }
-      }
-    }
-  }
-  
-  private func getHrPhysicalEvents() {
-    eventManager.getPhysicalHeartRateEvents(date: date) { [weak self] result in
-      DispatchQueue.main.async {
-      switch result {
-        case .success(let events):
-          self?.hrEvents = events
-        case .failure(let failure):
-          self?.hrEvents = []
-          debugPrint("Error fetching event \(failure)")
-        }
-      }
-    }
-  }
-  
+
+
   private func syncEvents() {
     self.isLoading = true
     if selectedType == "Body" {

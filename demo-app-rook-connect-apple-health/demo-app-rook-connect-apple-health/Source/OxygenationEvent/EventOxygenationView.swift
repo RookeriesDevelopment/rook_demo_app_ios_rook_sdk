@@ -53,14 +53,8 @@ struct EventOxygenationView: View {
               .padding(21)
           })
           
-          EventListSaturation(events: viewModel.oxygenationEvents)
-            .frame(height: 230)
-          
         }
         .padding(12)
-        .onAppear {
-          viewModel.getLastExtractionDateTime()
-        }
         .alert(isPresented: $viewModel.showMessage) {
           Alert(title: Text("Rook"),
                 message: Text(viewModel.message),
@@ -68,38 +62,6 @@ struct EventOxygenationView: View {
             viewModel.showMessage = false
             viewModel.message = ""
           })
-        }
-      }
-    }
-  }
-}
-
-struct EventListSaturation: View {
-  
-  var events: [RookOxygentationEvent] = []
-  
-  var body: some View {
-    ScrollView(.horizontal) {
-      HStack{
-        ForEach(events, id: \.metadata.datetime) { event in
-          VStack {
-            
-            Text("saturation Avg \(event.oxygenationData.saturationAvgPercentage ?? 0)")
-            
-            Text("Vo2 Max \(event.oxygenationData.vo2MaxMlPerMinPerKg ?? 0)")
-            
-            if #available(iOS 16.0, *) {
-              Chart(event.oxygenationData.saturationGranularDataPercentage ?? [], id: \.datetime) { granular in
-                RectangleMark(
-                  x: .value("time",
-                            "\(granular.datetime)"),
-                  y: .value("BPM",
-                            granular.saturationPercentage)
-                )
-              }
-            }
-          }
-          .frame(width: 350)
         }
       }
     }

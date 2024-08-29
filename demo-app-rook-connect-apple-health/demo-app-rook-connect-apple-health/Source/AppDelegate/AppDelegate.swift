@@ -25,7 +25,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     RookConnectConfigurationManager.shared.setConfiguration(
       clientUUID: ConfigurationManager.shared.clientUUID,
-      secretKey: ConfigurationManager.shared.secreteKey)
+      secretKey: ConfigurationManager.shared.secreteKey,
+      enableBackgroundSync: true,
+      enableEventsBackgroundSync: true)
     
     RookConnectConfigurationManager.shared.setEnvironment(.sandbox)
     
@@ -37,6 +39,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     RookBackGroundSync.shared.setBackListeners()
     handleEvents()
+    FirebaseApp.configure()
+    
     return true
   }
 
