@@ -124,11 +124,10 @@ class HomeViewModel: ObservableObject {
   func toggleEventsBackgroundStatus() {
     self.loadingEventsBackgroundStatus = true
     if RookBackGroundSync.shared.isBackGroundForEventsEnable() {
-      RookBackGroundSync.shared.disableBackGroundForEvents { [weak self] in
-        self?.getBackgroundStatusEvents()
-        DispatchQueue.main.async {
-          self?.loadingEventsBackgroundStatus = false
-        }
+      RookBackGroundSync.shared.disableBackGroundForEvents()
+      self.getBackgroundStatusEvents()
+      DispatchQueue.main.async {
+        self.loadingEventsBackgroundStatus = false
       }
     } else {
       RookBackGroundSync.shared.enableBackGroundForEvents()

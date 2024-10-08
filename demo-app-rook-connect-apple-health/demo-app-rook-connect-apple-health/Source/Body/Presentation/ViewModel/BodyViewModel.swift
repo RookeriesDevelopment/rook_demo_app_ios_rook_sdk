@@ -10,7 +10,6 @@ import RookSDK
 
 class BodyViewModel: ObservableObject {
   
-  private let extractioManager = RookExtractionManager()
   private let permissionManager = RookPermissionExtraction()
   private let syncManager: RookSummaryManager = RookSummaryManager()
   
@@ -40,17 +39,6 @@ class BodyViewModel: ObservableObject {
   
   func getBodyData() {
     
-    extractioManager.getBodySummary(date: date) { [weak self] result in
-      DispatchQueue.main.async {
-        switch result {
-        case .success(let data):
-          self?.bodyData = data
-          debugPrint("body data \(data)")
-        case .failure(let error):
-          debugPrint("error while fecthing body \(error)")
-        }
-      }
-    }
     self.syncSummary()
   }
   

@@ -13,7 +13,6 @@ class SleepViewModel: ObservableObject {
   
   // MARK:  Properties
   
-  private let extractioManager = RookExtractionManager()
   private let syncManager: RookSummaryManager = RookSummaryManager()
   
   var message: String = ""
@@ -26,18 +25,6 @@ class SleepViewModel: ObservableObject {
   // MARK:  Helpers
   
   func getSleepData() {
-    extractioManager.getSleepSummary(date: date) { [weak self] result in
-      DispatchQueue.main.async {
-        switch result {
-        case .success(let data):
-          self?.sleepData = data
-          debugPrint("sleep data \(data)")
-        case .failure(let error):
-          debugPrint("error while fecthing sleep \(error)")
-        }
-      }
-    }
-    
     self.syncSleepData()
   }
   

@@ -12,7 +12,6 @@ class PhysicalViewModel: ObservableObject {
   
   // MARK:  Properties
   
-  private let extractioManager: RookExtractionManager = RookExtractionManager()
   private let permissionManager: RookPermissionExtraction = RookPermissionExtraction()
   private let syncManager: RookSummaryManager = RookSummaryManager()
   
@@ -35,19 +34,6 @@ class PhysicalViewModel: ObservableObject {
   }
   
   func getPhysicalData() {
-    extractioManager.getPhysicalSummary(date: date) { [weak self] result in
-      
-      DispatchQueue.main.async {
-        switch result {
-        case .success(let data):
-          self?.physicalData = data
-          debugPrint("physical data \(data)")
-        case .failure(let error):
-          debugPrint("error while fecthing physical \(error)")
-        }
-      }
-    }
-    
     syncPhysicalSummary()
   }
   

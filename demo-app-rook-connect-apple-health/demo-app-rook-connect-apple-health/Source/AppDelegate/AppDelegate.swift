@@ -39,7 +39,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     RookBackGroundSync.shared.setBackListeners()
     handleEvents()
-    FirebaseApp.configure()
     
     return true
   }
