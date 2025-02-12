@@ -51,6 +51,8 @@
 		AD7BAA1B2B351D0A00456126 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */; };
 		AD81CD8E2B606A8A00F1E782 /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81CD8D2B606A8A00F1E782 /* BasicAuth.swift */; };
 		AD932F1A2A958B3400D4C665 /* RemoteSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */; };
+		ADC09DB62D5D083E005CA34F /* CaloriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC09DB42D5D083E005CA34F /* CaloriesView.swift */; };
+		ADC09DB72D5D083E005CA34F /* CaloriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC09DB52D5D083E005CA34F /* CaloriesViewModel.swift */; };
 		ADF1D0452B6D677A009B31B3 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF1D0442B6D677A009B31B3 /* PermissionView.swift */; };
 		ADF1D0472B6D6791009B31B3 /* PermissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF1D0462B6D6791009B31B3 /* PermissionViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -115,6 +117,8 @@
 		AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AD81CD8D2B606A8A00F1E782 /* BasicAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		AD932F192A958B3400D4C665 /* RemoteSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSyncManager.swift; sourceTree = "<group>"; };
+		ADC09DB42D5D083E005CA34F /* CaloriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaloriesView.swift; sourceTree = "<group>"; };
+		ADC09DB52D5D083E005CA34F /* CaloriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaloriesViewModel.swift; sourceTree = "<group>"; };
 		ADF1D0442B6D677A009B31B3 /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		ADF1D0462B6D6791009B31B3 /* PermissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +175,7 @@
 		AD13EE6B2A93E5400027A4E6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				ADC09DB32D5D0817005CA34F /* Calories */,
 				ADF1D0432B6D675C009B31B3 /* Permissions */,
 				AD13EEEF2A9583FE0027A4E6 /* PsuhNotifications */,
 				AD13EE932A93E5830027A4E6 /* ActivityEvent */,
@@ -552,6 +557,15 @@
 			path = PsuhNotifications;
 			sourceTree = "<group>";
 		};
+		ADC09DB32D5D0817005CA34F /* Calories */ = {
+			isa = PBXGroup;
+			children = (
+				ADC09DB42D5D083E005CA34F /* CaloriesView.swift */,
+				ADC09DB52D5D083E005CA34F /* CaloriesViewModel.swift */,
+			);
+			path = Calories;
+			sourceTree = "<group>";
+		};
 		ADF1D0432B6D675C009B31B3 /* Permissions */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,6 +670,7 @@
 				ADF1D0472B6D6791009B31B3 /* PermissionViewModel.swift in Sources */,
 				AD13EED12A93E5830027A4E6 /* BodyView.swift in Sources */,
 				AD13EEC32A93E5830027A4E6 /* ButtonSourceView.swift in Sources */,
+				ADC09DB72D5D083E005CA34F /* CaloriesViewModel.swift in Sources */,
 				AD13EEBB2A93E5830027A4E6 /* HomeView.swift in Sources */,
 				AD13EECC2A93E5830027A4E6 /* SleepViewModel.swift in Sources */,
 				AD13EEBC2A93E5830027A4E6 /* DatasourceWebViewModel.swift in Sources */,
@@ -676,6 +691,7 @@
 				AD13EECF2A93E5830027A4E6 /* EventHrView.swift in Sources */,
 				AD13EEC12A93E5830027A4E6 /* SourceItemViewModel.swift in Sources */,
 				AD13EEF12A9583FE0027A4E6 /* PushNotificationManager.swift in Sources */,
+				ADC09DB62D5D083E005CA34F /* CaloriesView.swift in Sources */,
 				AD13EECB2A93E5830027A4E6 /* AppDelegate.swift in Sources */,
 				AD13EEDA2A93E5830027A4E6 /* HTTPMethod.swift in Sources */,
 				AD13EED82A93E5830027A4E6 /* NetworkRouter.swift in Sources */,
@@ -905,8 +921,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RookeriesDevelopment/rook-ios-sdk.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.0;
+				branch = feature/new_release_1.6.9;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

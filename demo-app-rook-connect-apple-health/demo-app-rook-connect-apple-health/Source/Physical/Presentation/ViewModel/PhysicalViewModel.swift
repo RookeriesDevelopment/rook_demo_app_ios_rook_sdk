@@ -12,7 +12,7 @@ class PhysicalViewModel: ObservableObject {
   
   // MARK:  Properties
   
-  private let permissionManager: RookPermissionExtraction = RookPermissionExtraction()
+  private let permissionManager: RookConnectPermissionsManager = RookConnectPermissionsManager()
   private let syncManager: RookSummaryManager = RookSummaryManager()
   
   var message: String = ""

@@ -7,12 +7,19 @@
 
 import Foundation
 import RookSDK
+import SwiftUI
+
+struct OptionView {
+  let title: String
+  let view: any View
+}
 
 class HomeViewModel: ObservableObject {
   
   private let syncManager: RookSummaryManager = RookSummaryManager()
   private let dataSourceManager: DataSourcesManager = DataSourcesManager()
   private let eventManager: RookEventsManager = RookEventsManager()
+  private let userManager: UserManager = UserManager()
 
   @Published var isLoading: Bool = false
   @Published var user: String = ""
@@ -27,6 +34,16 @@ class HomeViewModel: ObservableObject {
 
   @Published var loadingSummariesBackgroundStatus: Bool = false
   @Published var loadingEventsBackgroundStatus: Bool = false
+
+  let optionList: [OptionView] = [
+    OptionView(title: "Sleep Summary", view: SleepView()),
+    OptionView(title: "Physical Summary", view: PhysicalView()),
+    OptionView(title: "Body Summary", view: BodyView()),
+    OptionView(title: "Calories Events", view: CaloriesView()),
+    OptionView(title: "Heart Rate Event", view: EventHrView()),
+    OptionView(title: "Oxygenation Events", view: EventOxygenationView()),
+    OptionView(title: "Activity Events", view: ActivityEventView())
+  ]
 
   func onAppear() {
     getSteps()

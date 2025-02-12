@@ -10,7 +10,7 @@ import RookSDK
 
 class BodyViewModel: ObservableObject {
   
-  private let permissionManager = RookPermissionExtraction()
+  private let permissionManager: RookConnectPermissionsManager = RookConnectPermissionsManager()
   private let syncManager: RookSummaryManager = RookSummaryManager()
   
   var message: String = ""

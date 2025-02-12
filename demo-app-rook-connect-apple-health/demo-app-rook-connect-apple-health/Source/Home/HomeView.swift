@@ -23,43 +23,13 @@ struct HomeView: View {
       Spacer()
       
       List {
-        NavigationLink(destination: {
-          SleepView()
-        }, label: {
-          Text("Sleep")
-        })
-        
-        NavigationLink(destination: {
-          PhysicalView()
-        }, label: {
-          Text("Physical")
-        })
-        
-        NavigationLink(destination: {
-          BodyView()
-        }, label: {
-          Text("Body")
-        })
-        
-        NavigationLink(destination: {
-          EventHrView()
-        }, label: {
-          Text("Hr Events")
-        })
-        
-        NavigationLink(destination: {
-          EventOxygenationView()
-        }, label: {
-          Text("Oxygenation Events")
-        })
-        
-        NavigationLink(destination: {
-          ActivityEventView()
-        }, label: {
-          Text("Activity Events")
-        })
-        
+        ForEach(viewModel.optionList, id: \.title) { option in
+          NavigationLink(option.title) {
+            AnyView(option.view)
+          }
+        }
       }
+      .listStyle(.plain)
       
       Button(action: {
         viewModel.showDataSourceView()
@@ -72,7 +42,6 @@ struct HomeView: View {
           .cornerRadius(12)
           .padding(21)
       })
-      
     }.onAppear() {
       PushNotificationManager.shared.requestRegister()
       viewModel.onAppear()

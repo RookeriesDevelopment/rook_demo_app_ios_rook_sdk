@@ -30,7 +30,7 @@ class SleepViewModel: ObservableObject {
   
   func getSleepPermissions() {
     isLoading = true
-    let permissionManager = RookPermissionExtraction()
+    let permissionManager: RookConnectPermissionsManager = RookConnectPermissionsManager()
     permissionManager.requestSleepPermissions() { [weak self] _ in
       DispatchQueue.main.async {
         self?.isLoading = false
