@@ -12,10 +12,8 @@ class EventOxygenationViewModel: ObservableObject {
   
   private let syncManager: RookEventsManager = RookEventsManager()
 
-  var eventTypes = ["Body", "Physical"]
   var message: String = ""
-  
-  @Published var selectedType = "Body"
+
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
   @Published var date: Date = Date()
@@ -28,14 +26,8 @@ class EventOxygenationViewModel: ObservableObject {
   
   private func syncEvents() {
     self.isLoading = true
-    if selectedType == "Body" {
-      syncManager.syncBodyOxygenationEvent(date: date) { [weak self] result in
-        self?.handleResult(result: result)
-      }
-    } else {
-      syncManager.syncPhysicalOxygenationEvent(date: date) { [weak self] result in
-        self?.handleResult(result: result)
-      }
+    syncManager.syncEvents(date: date, eventType: .oxygenation) { [weak self] result in
+      self?.handleResult(result: result)
     }
   }
   

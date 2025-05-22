@@ -28,7 +28,7 @@ struct SleepView: View {
         Button(action: {
           sleepVM.getSleepPermissions()
         }, label: {
-          Text("get Sleep Permissions")
+          Text("Request sleep Permissions")
         }).padding(20)
         
         DatePicker("date to fetch",
@@ -40,22 +40,8 @@ struct SleepView: View {
         Button(action: {
           sleepVM.getSleepData()
         }, label: {
-          Text("get and sync sleep summary")
+          Text("Sync sleep summary")
         }).padding(10)
-        
-        List {
-          LazyVStack {
-            
-            Text("Sleep duration \(sleepVM.sleepData?.first?.summaries.sleepRelatedData.sleepDurationRelatedData.sleepDurationSeconds ?? 0)")
-            
-            Text("Sleep deep duration \(sleepVM.sleepData?.first?.summaries.sleepRelatedData.sleepDurationRelatedData.deepSleepDurationSeconds ?? 0)")
-            
-            Text("Sleep ligth duration \(sleepVM.sleepData?.first?.summaries.sleepRelatedData.sleepDurationRelatedData.lightSleepDurationSeconds ?? 0)")
-            
-            Text("Sleep rem duration \(sleepVM.sleepData?.first?.summaries.sleepRelatedData.sleepDurationRelatedData.remSleepDurationSeconds ?? 0)")
-          }
-        }
-        
         Spacer()
       }.alert(isPresented: $sleepVM.showMessage) {
         Alert(title: Text("Rook"),

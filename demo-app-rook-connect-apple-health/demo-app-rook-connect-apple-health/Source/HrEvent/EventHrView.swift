@@ -30,16 +30,6 @@ struct EventHrView: View {
           .pickerStyle(.wheel)
           .padding(8)
           
-          HStack {
-            Picker("Please choose a type", selection: $viewModel.selectedType) {
-              ForEach(viewModel.eventTypes, id: \.self) {
-                Text($0)
-              }
-            }
-            Spacer()
-            Text("\(viewModel.selectedType)")
-          }
-          
           Button(action: {
             viewModel.getAndSyncHrEvents()
           }, label: {

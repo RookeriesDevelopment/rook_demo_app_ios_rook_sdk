@@ -15,9 +15,7 @@ struct HomeView: View {
   
   var body: some View {
     VStack {
-
       userStepsView
-      
       statusBackgroundView
 
       Spacer()

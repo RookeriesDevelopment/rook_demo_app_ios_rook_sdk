@@ -26,7 +26,7 @@ class ActivityEventViewModel: ObservableObject {
   
   private func syncEvents() {
     self.isLoading = true
-    syncEventsManager.syncTrainingEvent(date: date) { [weak self] result in
+    syncEventsManager.syncEvents(date: date, eventType: .activityEvent) { [weak self] result in
       self?.handleResult(result: result)
     }
   }

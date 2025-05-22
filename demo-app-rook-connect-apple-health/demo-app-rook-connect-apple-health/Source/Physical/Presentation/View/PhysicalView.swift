@@ -22,7 +22,7 @@ struct PhysicalView: View {
       Button(action: {
         viewModel.requestPhysicalPermission()
       }, label: {
-        Text("get physical Permissions")
+        Text("request physical Permissions")
       }).padding(20)
       
       DatePicker("date to fetch",
@@ -34,10 +34,8 @@ struct PhysicalView: View {
       Button(action: {
         viewModel.getPhysicalData()
       }, label: {
-        Text("get and sync physical summary")
+        Text("sync physical summary")
       })
-      
-      PhysicalList(physicalData: viewModel.physicalData)
       
       Spacer()
     }
@@ -49,34 +47,5 @@ struct PhysicalView: View {
         viewModel.message = ""
       })
     }
-  }
-}
-
-struct PhysicalList: View {
-  
-  var physicalData: RookPhysicalData?
-  
-  var body: some View {
-    List {
-      LazyVStack {
-        Text("basal calories \(physicalData?.summaries.dailyActivityRelatedData.caloriesData.caloriesBasalMetabolicRateKilocalories ?? 0)")
-        
-        Text("active calories \(physicalData?.summaries.dailyActivityRelatedData.caloriesData.caloriesNetActiveKilocalories ?? 0)")
-        
-        Text("steps \(physicalData?.summaries.dailyActivityRelatedData.distanceData.stepsPerDayNumber ?? 0)")
-        
-        Text("hrv \(physicalData?.summaries.dailyActivityRelatedData.heartRateData.hrvAvgSdnnNumber ?? 0)")
-        
-        Text("max hr \(physicalData?.summaries.dailyActivityRelatedData.heartRateData.hrMaxBPM ?? 0)")
-        
-        Text("min hr \(physicalData?.summaries.dailyActivityRelatedData.heartRateData.hrMinimumBPM ?? 0)")
-      }
-    }
-  }
-}
-
-struct PhysicalView_Previews: PreviewProvider {
-  static var previews: some View {
-    PhysicalView()
   }
 }

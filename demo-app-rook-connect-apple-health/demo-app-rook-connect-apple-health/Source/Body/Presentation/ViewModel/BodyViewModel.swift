@@ -16,7 +16,6 @@ class BodyViewModel: ObservableObject {
   var message: String = ""
   
   @Published var date: Date = Date()
-  @Published var bodyData: RookBodyData?
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
   
@@ -44,7 +43,7 @@ class BodyViewModel: ObservableObject {
   
   private func syncSummary() {
     self.isLoading = true
-    syncManager.syncBodySummary(from: date) { [weak self] result in
+    syncManager.sync(date, summaryType: [.body]) { [weak self] result in
       self?.handleResult(result: result)
     }
   }

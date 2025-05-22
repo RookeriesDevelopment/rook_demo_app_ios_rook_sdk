@@ -18,10 +18,8 @@ final class EventHrViewModel: ObservableObject {
   var eventTypes = ["Body", "Physical"]
   
   @Published var date: Date = Date()
-  @Published var hrEvents: [RookHeartRateEventExtraction] = []
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
-  @Published var selectedType = "Body"
   
   // MARK:  Helpers
   
@@ -32,14 +30,8 @@ final class EventHrViewModel: ObservableObject {
 
   private func syncEvents() {
     self.isLoading = true
-    if selectedType == "Body" {
-      syncEventsManager.syncBodyHeartRateEvent(date: date) { [weak self] result in
-        self?.handleResult(result: result)
-      }
-    } else {
-      syncEventsManager.syncPhysicalHeartRateEvent(date: date) { [weak self] result in
-        self?.handleResult(result: result)
-      }
+    syncEventsManager.syncEvents(date: date, eventType: .heartRate) { [weak self] result in
+      self?.handleResult(result: result)
     }
   }
   

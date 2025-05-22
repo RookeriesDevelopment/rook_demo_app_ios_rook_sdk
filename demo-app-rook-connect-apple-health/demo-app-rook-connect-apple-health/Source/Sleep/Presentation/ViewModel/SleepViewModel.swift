@@ -18,7 +18,6 @@ class SleepViewModel: ObservableObject {
   var message: String = ""
   
   @Published var date: Date = Date()
-  @Published var sleepData: [RookSleepData]?
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
   
@@ -39,7 +38,7 @@ class SleepViewModel: ObservableObject {
   }
   
   func syncSleepData() {
-    syncManager.syncSleepSummary(from: date) { [weak self] result in
+    syncManager.sync(date, summaryType: [.sleep]) { [weak self] result in
       DispatchQueue.main.async {
         switch result {
         case .success(_):

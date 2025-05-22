@@ -18,7 +18,6 @@ class PhysicalViewModel: ObservableObject {
   var message: String = ""
   
   @Published var date: Date = Date()
-  @Published var physicalData: RookPhysicalData?
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
   
@@ -39,7 +38,7 @@ class PhysicalViewModel: ObservableObject {
   
   private func syncPhysicalSummary() {
     self.isLoading = true
-    syncManager.syncPhysicalSummary(from: date) { [weak self] result in
+    syncManager.sync(date, summaryType: [.physical]) { [weak self] result in
       
       DispatchQueue.main.async {
         switch result {

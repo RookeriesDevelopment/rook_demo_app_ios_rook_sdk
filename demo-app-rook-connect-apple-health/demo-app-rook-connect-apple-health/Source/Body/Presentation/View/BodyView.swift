@@ -25,7 +25,7 @@ struct BodyView: View {
         Button(action: {
           viewModel.requestBodyPermission()
         }, label: {
-          Text("Get body Permissions")
+          Text("request body Permissions")
         }).padding(20)
         
         DatePicker("date to fetch",
@@ -37,15 +37,8 @@ struct BodyView: View {
         Button(action: {
           viewModel.getBodyData()
         }, label: {
-          Text("get and sync Body summary")
+          Text("sync Body summary")
         })
-        
-        List {
-          LazyVStack {
-            Text("weight \(viewModel.bodyData?.summaries.bodyData.body.weightKgNumber ?? 0)")
-            Text("height \(viewModel.bodyData?.summaries.bodyData.body.heightCMNumber ?? 0)")
-          }
-        }
         Spacer()
       }
       .alert(isPresented: $viewModel.showMessage) {

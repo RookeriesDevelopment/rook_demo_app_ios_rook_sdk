@@ -64,7 +64,7 @@ class HomeViewModel: ObservableObject {
 
   func syncYesterdaySummaries() {
     isLoading = true
-    syncManager.syncSummaries { [weak self] in
+    syncManager.sync() { [weak self] _ in
       DispatchQueue.main.async {
         self?.isLoading = false
       }

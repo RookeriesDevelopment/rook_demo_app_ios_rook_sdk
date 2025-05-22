@@ -77,20 +77,7 @@ extension AppDelegate {
                    fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     print("user info \(userInfo)")
     if let data: [String: String] = userInfo["data"] as? [String : String], let summary: String = data["summary"], let date: String = data["date"] {
-      if summary == "sleep" {
-        RemoteSyncManger.shared.updateSleepSummary(from: date) { result in
-          
-          
-          switch result {
-          case .success(let success):
-            print("sleep upload \(success)")
-            completionHandler(.newData)
-          case .failure(let failure):
-            print("fail \(failure)")
-            completionHandler(.newData)
-          }
-        }
-      }
+      debugPrint("data \(data)")
     } else {
       print("no data")
       completionHandler(.noData)

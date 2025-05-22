@@ -27,7 +27,7 @@ struct ActivityEventView: View {
             .font(.system(size: 24, weight: .bold))
             .padding(12)
           
-          DatePicker("date to fetch",
+          DatePicker("date to sync",
                      selection: $viewModel.date,
                      displayedComponents: .date)
           .pickerStyle(.wheel)
@@ -36,7 +36,7 @@ struct ActivityEventView: View {
           Button(action: {
             viewModel.getActivityEvents()
           }, label: {
-            Text("Get Events")
+            Text("sync Events")
               .foregroundColor(.white)
               .font(.system(size: 16, weight: .bold))
               .frame(width: 250, height: 50)
