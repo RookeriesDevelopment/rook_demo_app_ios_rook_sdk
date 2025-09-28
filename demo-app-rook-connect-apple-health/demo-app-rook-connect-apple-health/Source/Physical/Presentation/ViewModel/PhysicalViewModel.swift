@@ -20,6 +20,7 @@ class PhysicalViewModel: ObservableObject {
   @Published var date: Date = Date()
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
+  @Published var physicalData: [[String: Any]] = []
   
   // MARK:  Helpers
   
@@ -38,11 +39,14 @@ class PhysicalViewModel: ObservableObject {
   
   private func syncPhysicalSummary() {
     self.isLoading = true
-    syncManager.sync(date, summaryType: [.physical]) { [weak self] result in
-      
+    syncManager.getPhysicalSummary(date: date) { [weak self] result in
       DispatchQueue.main.async {
         switch result {
-        case .success(_):
+        case .success(let summary):
+          if let data: Data = try? JSONEncoder().encode(summary),
+             let jsonObject: [String: Any] = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+            self?.physicalData = [jsonObject]
+          }
           self?.message = "data was synchronized"
         case .failure(let error):
           self?.message = "Error while storing summary \(error)"

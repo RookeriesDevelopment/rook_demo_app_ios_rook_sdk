@@ -18,6 +18,7 @@ class BodyViewModel: ObservableObject {
   @Published var date: Date = Date()
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
+  @Published var bodyData: [[String: Any]] = []
   
   // MARK:  Helpers
   
@@ -43,15 +44,19 @@ class BodyViewModel: ObservableObject {
   
   private func syncSummary() {
     self.isLoading = true
-    syncManager.sync(date, summaryType: [.body]) { [weak self] result in
+    syncManager.getBodySummary(date: date) { [weak self] result in
       self?.handleResult(result: result)
     }
   }
   
-  private func handleResult(result: Result<Bool, Error>) {
+  private func handleResult(result: Result<RookBodySummary, Error>) {
     DispatchQueue.main.async {
       switch result {
-      case .success(_):
+      case .success(let summary):
+        if let data: Data = try? JSONEncoder().encode(summary),
+           let jsonObject: [String: Any] = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+          self.bodyData = [jsonObject]
+        }
         self.message = "data was synchronized"
       case .failure(let error):
         self.message = "Error while storing summary \(error)"

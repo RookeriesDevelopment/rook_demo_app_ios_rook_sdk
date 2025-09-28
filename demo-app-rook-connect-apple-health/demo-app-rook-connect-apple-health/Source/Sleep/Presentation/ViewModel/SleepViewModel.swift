@@ -20,6 +20,7 @@ class SleepViewModel: ObservableObject {
   @Published var date: Date = Date()
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
+  @Published var sleepData: [[String: Any]] = []
   
   // MARK:  Helpers
   
@@ -38,14 +39,26 @@ class SleepViewModel: ObservableObject {
   }
   
   func syncSleepData() {
-    syncManager.sync(date, summaryType: [.sleep]) { [weak self] result in
-      DispatchQueue.main.async {
+    syncManager.getSleepSummary(date: date) { [weak self] result in
         switch result {
-        case .success(_):
-          self?.message = "data was synchronized"
+        case .success(let summaries):
+          var sleepDictionaries: [[String: Any]] = []
+          for summary in summaries {
+            if let data: Data = try? JSONEncoder().encode(summary),
+               let jsonObject: [String: Any] = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+              sleepDictionaries.append(jsonObject)
+            }
+          }
+          DispatchQueue.main.async {
+            self?.sleepData = sleepDictionaries
+            self?.message = "data was synchronized"
+          }
         case .failure(let error):
-          self?.message = "Error while storing summary \(error)"
+          DispatchQueue.main.async {
+            self?.message = "Error while storing summary \(error)"
+          }
         }
+      DispatchQueue.main.async {
         self?.isLoading = false
         self?.showMessage = true
       }
