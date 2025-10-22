@@ -55,6 +55,7 @@
 		ADC09DB72D5D083E005CA34F /* CaloriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC09DB52D5D083E005CA34F /* CaloriesViewModel.swift */; };
 		ADF1D0452B6D677A009B31B3 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF1D0442B6D677A009B31B3 /* PermissionView.swift */; };
 		ADF1D0472B6D6791009B31B3 /* PermissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF1D0462B6D6791009B31B3 /* PermissionViewModel.swift */; };
+		ADFD13812E8A156900975D90 /* HealthComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD13802E8A156900975D90 /* HealthComponentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +122,7 @@
 		ADC09DB52D5D083E005CA34F /* CaloriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaloriesViewModel.swift; sourceTree = "<group>"; };
 		ADF1D0442B6D677A009B31B3 /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		ADF1D0462B6D6791009B31B3 /* PermissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewModel.swift; sourceTree = "<group>"; };
+		ADFD13802E8A156900975D90 /* HealthComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		AD13EE722A93E5830027A4E6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				ADFD137F2E8A155800975D90 /* View */,
 				AD13EE732A93E5830027A4E6 /* HomeView.swift */,
 				AD7BAA1A2B351D0A00456126 /* HomeViewModel.swift */,
 			);
@@ -575,6 +578,14 @@
 			path = Permissions;
 			sourceTree = "<group>";
 		};
+		ADFD137F2E8A155800975D90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADFD13802E8A156900975D90 /* HealthComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -656,6 +667,7 @@
 				AD13EEC42A93E5830027A4E6 /* DataSourcesView.swift in Sources */,
 				AD13EED02A93E5830027A4E6 /* BodyViewModel.swift in Sources */,
 				AD7BAA1B2B351D0A00456126 /* HomeViewModel.swift in Sources */,
+				ADFD13812E8A156900975D90 /* HealthComponentView.swift in Sources */,
 				AD13EECA2A93E5830027A4E6 /* ActivityeventViewModel.swift in Sources */,
 				AD13EEBF2A93E5830027A4E6 /* DataSourceNetworking.swift in Sources */,
 				AD13EEC72A93E5830027A4E6 /* EventOxygenationView.swift in Sources */,
@@ -921,7 +933,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RookeriesDevelopment/rook-ios-sdk.git";
 			requirement = {
-				branch = "feature/pre_release_1.7.8-beta.3";
+				branch = "feature/pre_release_1.7.9-beta.4";
 				kind = branch;
 			};
 		};

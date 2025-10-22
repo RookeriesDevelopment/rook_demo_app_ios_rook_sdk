@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RookSDK
 
 struct DataSourcesView: View {
   
@@ -17,10 +18,17 @@ struct DataSourcesView: View {
       if (viewModel.isLoading) {
         ProgressView()
       } else {
+        Text("Get the value of your data")
+          .font(.title3)
+          .fontWeight(.bold)
+          .padding(.horizontal, 24.0)
+          .padding(.top, 24.0)
         List(viewModel.sources) { item in
           Button(action: {
-            self.viewModel.urlSelected = item.urlConnect
-            self.isSourcePagePresented = true
+            if !checkAppleHealth(item: item) {
+              self.viewModel.urlSelected = item.urlConnect
+              self.isSourcePagePresented = true
+            }
           }, label: {
             ButtonSourceView(viewModel: item)
           })
@@ -35,6 +43,14 @@ struct DataSourcesView: View {
     }) {
       DataSourcePageView(viewModel: DatasourceWebViewModel(dataSourceURL: viewModel.urlSelected))
     }
+  }
+
+  private func checkAppleHealth(item: SourceItemViewModel) -> Bool {
+    if item.name.lowercased().contains("apple") {
+      RookConnectPermissionsManager().requestAllPermissions { _ in }
+      return true
+    }
+    return false
   }
 }
 

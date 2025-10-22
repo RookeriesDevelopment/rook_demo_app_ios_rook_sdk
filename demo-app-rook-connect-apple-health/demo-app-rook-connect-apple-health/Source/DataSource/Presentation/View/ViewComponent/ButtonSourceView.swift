@@ -35,14 +35,9 @@ struct ButtonSourceView: View {
       
       VStack(alignment: .leading) {
         Text(viewModel.name)
-          .font(.system(size: 18, weight: .bold))
-        
-        Text(viewModel.description)
-          .font(.system(size: 16))
-          .lineLimit(3)
-        
+          .font(.system(size: 18, weight: .semibold))
       }
-      
+      Spacer()
       Text("\(viewModel.isConnected ? "Connected" : "Connect")")
         .font(.system(size: 12, weight: .semibold))
         .padding(4)

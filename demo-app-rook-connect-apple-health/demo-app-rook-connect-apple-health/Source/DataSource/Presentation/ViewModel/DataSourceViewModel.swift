@@ -7,14 +7,11 @@
 
 import Foundation
 import Combine
-
+import RookSDK
 final class DataSourceViewModel: ObservableObject {
   
   // MARK:  Properties
-  
-  private let dataSourceNetworking: DataSourceNetworking = DataSourceNetworking()
-  
-  var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
+  private let dataSourceManager: DataSourcesManager = DataSourcesManager()
   var urlSelected: URL? = nil
   
   @Published var isLoading: Bool = false
@@ -22,19 +19,28 @@ final class DataSourceViewModel: ObservableObject {
   
   // MARK:  Helpers
   
-  private func getUserId() -> String {
-    return "paco@rookmotion.com"
-  }
-  
   func getDataSourcesAvailable() {
-    dataSourceNetworking.getDataSources(for: getUserId())
-      .receive(on: DispatchQueue.main)
-      .sink(receiveCompletion: { [weak self] _ in
-        self?.isLoading = false
-      }, receiveValue: { [weak self] response in
-        self?.sources = response.dataSources.map {
-          SourceItemViewModel(sourceDTO: $0)
+    Task {
+      isLoading = true
+      do {
+        let sources: [DataSourceStatus] = try await dataSourceManager.getAuthorizedDataSources()
+        DispatchQueue.main.async {
+          self.isLoading = false
+          self.sources = sources.map {
+            SourceItemViewModel(sourceDTO: DataSourcesDTO(
+              name: $0.source,
+              description: String(),
+              imageUrl: $0.imageURL.absoluteString,
+              connected: $0.status,
+              authorizationURL: nil))
+          }
         }
-      }).store(in: &cancellables)
+      } catch {
+        DispatchQueue.main.async {
+          self.isLoading = false
+        }
+        debugPrint("error \(error)")
+      }
+    }
   }
 }
