@@ -933,8 +933,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RookeriesDevelopment/rook-ios-sdk.git";
 			requirement = {
-				branch = "feature/pre_release_1.7.9-beta.4";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

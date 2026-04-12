@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SourceItemViewModel: Identifiable {
+struct SourceItemViewModel: Identifiable, Sendable {
   
   private let sourceDTO: DataSourcesDTO
   

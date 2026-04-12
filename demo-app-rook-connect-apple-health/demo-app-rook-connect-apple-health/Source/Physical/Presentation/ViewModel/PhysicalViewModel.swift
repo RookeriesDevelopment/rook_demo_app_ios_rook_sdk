@@ -26,7 +26,7 @@ class PhysicalViewModel: ObservableObject {
   
   func requestPhysicalPermission() {
     self.isLoading = true
-    permissionManager.requestPhysicalPermissions() { [weak self] _ in
+    permissionManager.requestPermissions(nil) { [weak self] _ in
       DispatchQueue.main.async {
         self?.isLoading = false
       }

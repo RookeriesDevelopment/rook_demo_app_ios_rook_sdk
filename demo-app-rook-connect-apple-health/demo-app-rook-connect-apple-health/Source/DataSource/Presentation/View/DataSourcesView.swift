@@ -47,7 +47,7 @@ struct DataSourcesView: View {
 
   private func checkAppleHealth(item: SourceItemViewModel) -> Bool {
     if item.name.lowercased().contains("apple") {
-      RookConnectPermissionsManager().requestAllPermissions { _ in }
+      RookConnectPermissionsManager().requestPermissions(nil) { _ in }
       return true
     }
     return false

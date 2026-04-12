@@ -7,7 +7,8 @@
 
 import Foundation
 import Combine
-import RookSDK
+@preconcurrency import RookSDK
+
 final class DataSourceViewModel: ObservableObject {
   
   // MARK:  Properties
@@ -23,17 +24,10 @@ final class DataSourceViewModel: ObservableObject {
     Task {
       isLoading = true
       do {
-        let sources: [DataSourceStatus] = try await dataSourceManager.getAuthorizedDataSources()
+        let sources: [DataSourceStatus] = try await dataSourceManager.getDataSourcesAuthorizedV2(userId: nil)
         DispatchQueue.main.async {
           self.isLoading = false
-          self.sources = sources.map {
-            SourceItemViewModel(sourceDTO: DataSourcesDTO(
-              name: $0.source,
-              description: String(),
-              imageUrl: $0.imageURL.absoluteString,
-              connected: $0.status,
-              authorizationURL: nil))
-          }
+          self.sources = self.mapSources(sources)
         }
       } catch {
         DispatchQueue.main.async {
@@ -41,6 +35,17 @@ final class DataSourceViewModel: ObservableObject {
         }
         debugPrint("error \(error)")
       }
+    }
+  }
+
+  private func mapSources(_ rookSources: [DataSourceStatus]) -> [SourceItemViewModel] {
+    return rookSources.map {
+      SourceItemViewModel(sourceDTO: DataSourcesDTO(
+        name: $0.name,
+        description: String(),
+        imageUrl: $0.imageUrl.absoluteString,
+        connected: $0.authorized,
+        authorizationURL: nil))
     }
   }
 }
