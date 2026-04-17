@@ -48,7 +48,7 @@ extension DataSourceEndPoint: EndPointType {
   
   var basicAuth: BasicAuth? {
     return BasicAuth(userName: ConfigurationManager.shared.clientUUID,
-                     password: ConfigurationManager.shared.secreteKey)
+                     password: ConfigurationManager.shared.secret)
   }
   
 }

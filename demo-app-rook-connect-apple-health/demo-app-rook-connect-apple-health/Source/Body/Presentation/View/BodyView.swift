@@ -39,6 +39,7 @@ struct BodyView: View {
         }, label: {
           Text("sync Body summary")
         })
+        DataView(viewModel: DataViewModel(dataModel: viewModel.bodyData))
         Spacer()
       }
       .alert(isPresented: $viewModel.showMessage) {

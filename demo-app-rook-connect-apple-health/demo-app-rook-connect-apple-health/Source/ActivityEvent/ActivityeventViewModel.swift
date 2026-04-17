@@ -17,6 +17,7 @@ class ActivityEventViewModel: ObservableObject {
   @Published var date: Date = Date()
   @Published var isLoading: Bool = false
   @Published var showMessage: Bool = false
+  @Published var eventsData: [[String: Any]] = []
   
   // MARK:  Helpers
   
@@ -26,15 +27,23 @@ class ActivityEventViewModel: ObservableObject {
   
   private func syncEvents() {
     self.isLoading = true
-    syncEventsManager.syncEvents(date: date, eventType: .activityEvent) { [weak self] result in
+    syncEventsManager.getActivityEvents(date: date) { [weak self] result in
       self?.handleResult(result: result)
     }
   }
   
-  private func handleResult(result: Result<Bool, Error>) {
+  private func handleResult(result: Result<[RookActivityEvent], Error>) {
     DispatchQueue.main.async {
       switch result {
-      case .success(_):
+      case .success(let events):
+        var physicalEvents: [[String: Any]] = []
+        for event in events {
+          if let data: Data = try? JSONEncoder().encode(event),
+             let jsonObject: [String: Any] = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+            physicalEvents.append(jsonObject)
+          }
+        }
+        self.eventsData = physicalEvents
         self.message = "data was synchronized"
       case .failure(let error):
         self.message = "Error while storing summary \(error)"

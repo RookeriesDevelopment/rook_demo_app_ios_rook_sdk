@@ -13,7 +13,8 @@ class ConfigurationManager {
   static let shared: ConfigurationManager = ConfigurationManager()
   
   var clientUUID: String = "" // Set your client uuid here
-  var secreteKey: String = "" // Set your secrete key here.
+  var secret: String = "" // Set your secrete key here.
+  var customBundleId: String = "YOUR-CUSTOM-BUNDLE-ID-HERE"
   
   private init() { }
   
@@ -25,13 +26,18 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     RookConnectConfigurationManager.shared.setConfiguration(
       clientUUID: ConfigurationManager.shared.clientUUID,
-      secretKey: ConfigurationManager.shared.secreteKey,
+      secret: ConfigurationManager.shared.secret,
+      bundleId: ConfigurationManager.shared.customBundleId,
       enableBackgroundSync: true,
       enableEventsBackgroundSync: true)
     
     RookConnectConfigurationManager.shared.setEnvironment(.sandbox)
     
-    RookConnectConfigurationManager.shared.initRook()
+    Task {
+      do {
+        _ = try await RookConnectConfigurationManager.shared.initRook()
+      } catch { }
+    }
     RookConnectConfigurationManager.shared.setConsoleLogAvailable(true)
     
     UNUserNotificationCenter.current().delegate = self

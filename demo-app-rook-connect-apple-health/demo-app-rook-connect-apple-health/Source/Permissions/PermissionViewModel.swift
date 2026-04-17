@@ -32,7 +32,7 @@ class PermissionViewModel: ObservableObject {
 
   func requestAllPermission() {
     self.isLoading = true
-    permissionsManager.requestAllPermissions { [weak self] _ in
+    permissionsManager.requestPermissions(nil) { [weak self] _ in
       DispatchQueue.main.async {
         self?.isLoading = false
         self?.isActive = true

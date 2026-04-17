@@ -37,6 +37,8 @@ struct PhysicalView: View {
         Text("sync physical summary")
       })
       
+
+      DataView(viewModel: DataViewModel(dataModel: viewModel.physicalData))
       Spacer()
     }
     .alert(isPresented: $viewModel.showMessage) {
